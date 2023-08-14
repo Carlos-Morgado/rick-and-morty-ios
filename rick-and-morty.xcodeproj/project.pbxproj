@@ -10,6 +10,10 @@
 		C408E08B2A8A2A8100CEB1B3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C408E08A2A8A2A8100CEB1B3 /* NetworkManager.swift */; };
 		C408E08D2A8A2D9900CEB1B3 /* NetworkHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C408E08C2A8A2D9900CEB1B3 /* NetworkHTTPMethod.swift */; };
 		C408E08F2A8A3B7400CEB1B3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C408E08E2A8A3B7400CEB1B3 /* NetworkError.swift */; };
+		C408E0912A8A5C9800CEB1B3 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C408E0902A8A5C9800CEB1B3 /* TabBarViewController.swift */; };
+		C408E0932A8A5FC000CEB1B3 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C408E0922A8A5FC000CEB1B3 /* CharactersViewController.swift */; };
+		C408E0962A8A601E00CEB1B3 /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C408E0952A8A601E00CEB1B3 /* EpisodesViewController.swift */; };
+		C408E0992A8A606400CEB1B3 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C408E0982A8A606400CEB1B3 /* LocationsViewController.swift */; };
 		C4C0E3C02A73C0F10044BDE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C0E3BF2A73C0F10044BDE1 /* AppDelegate.swift */; };
 		C4C0E3C92A73C0F10044BDE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4C0E3C82A73C0F10044BDE1 /* Assets.xcassets */; };
 		C4C0E3CC2A73C0F10044BDE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C0E3CA2A73C0F10044BDE1 /* LaunchScreen.storyboard */; };
@@ -21,6 +25,10 @@
 		C408E08A2A8A2A8100CEB1B3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C408E08C2A8A2D9900CEB1B3 /* NetworkHTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHTTPMethod.swift; sourceTree = "<group>"; };
 		C408E08E2A8A3B7400CEB1B3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		C408E0902A8A5C9800CEB1B3 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		C408E0922A8A5FC000CEB1B3 /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
+		C408E0952A8A601E00CEB1B3 /* EpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewController.swift; sourceTree = "<group>"; };
+		C408E0982A8A606400CEB1B3 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		C4C0E3BC2A73C0F10044BDE1 /* rick-and-morty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rick-and-morty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C0E3BF2A73C0F10044BDE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4C0E3C82A73C0F10044BDE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,6 +52,7 @@
 		C408E0872A8A1E8C00CEB1B3 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
+				C408E09B2A8A6F7100CEB1B3 /* View */,
 			);
 			path = Characters;
 			sourceTree = "<group>";
@@ -64,6 +73,54 @@
 				C408E08E2A8A3B7400CEB1B3 /* NetworkError.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		C408E0942A8A600E00CEB1B3 /* Episodes */ = {
+			isa = PBXGroup;
+			children = (
+				C408E09C2A8A6F7900CEB1B3 /* View */,
+			);
+			path = Episodes;
+			sourceTree = "<group>";
+		};
+		C408E0972A8A604D00CEB1B3 /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				C408E09D2A8A6F8000CEB1B3 /* View */,
+			);
+			path = Locations;
+			sourceTree = "<group>";
+		};
+		C408E09A2A8A607500CEB1B3 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				C408E0902A8A5C9800CEB1B3 /* TabBarViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		C408E09B2A8A6F7100CEB1B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C408E0922A8A5FC000CEB1B3 /* CharactersViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C408E09C2A8A6F7900CEB1B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C408E0952A8A601E00CEB1B3 /* EpisodesViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C408E09D2A8A6F8000CEB1B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C408E0982A8A606400CEB1B3 /* LocationsViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C4C0E3B32A73C0F10044BDE1 = {
@@ -131,7 +188,10 @@
 			isa = PBXGroup;
 			children = (
 				C4C0E3D82A73CE0F0044BDE1 /* Splash */,
+				C408E09A2A8A607500CEB1B3 /* TabBar */,
 				C408E0872A8A1E8C00CEB1B3 /* Characters */,
+				C408E0942A8A600E00CEB1B3 /* Episodes */,
+				C408E0972A8A604D00CEB1B3 /* Locations */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -216,10 +276,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C408E0932A8A5FC000CEB1B3 /* CharactersViewController.swift in Sources */,
 				C408E08B2A8A2A8100CEB1B3 /* NetworkManager.swift in Sources */,
+				C408E0992A8A606400CEB1B3 /* LocationsViewController.swift in Sources */,
+				C408E0962A8A601E00CEB1B3 /* EpisodesViewController.swift in Sources */,
 				C408E08D2A8A2D9900CEB1B3 /* NetworkHTTPMethod.swift in Sources */,
 				C4C0E3C02A73C0F10044BDE1 /* AppDelegate.swift in Sources */,
 				C4C0E3DB2A73CE480044BDE1 /* SplashViewController.swift in Sources */,
+				C408E0912A8A5C9800CEB1B3 /* TabBarViewController.swift in Sources */,
 				C408E08F2A8A3B7400CEB1B3 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
