@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C408E08B2A8A2A8100CEB1B3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C408E08A2A8A2A8100CEB1B3 /* NetworkManager.swift */; };
+		C408E08D2A8A2D9900CEB1B3 /* NetworkHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C408E08C2A8A2D9900CEB1B3 /* NetworkHTTPMethod.swift */; };
+		C408E08F2A8A3B7400CEB1B3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C408E08E2A8A3B7400CEB1B3 /* NetworkError.swift */; };
 		C4C0E3C02A73C0F10044BDE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C0E3BF2A73C0F10044BDE1 /* AppDelegate.swift */; };
 		C4C0E3C92A73C0F10044BDE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4C0E3C82A73C0F10044BDE1 /* Assets.xcassets */; };
 		C4C0E3CC2A73C0F10044BDE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C0E3CA2A73C0F10044BDE1 /* LaunchScreen.storyboard */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C408E08A2A8A2A8100CEB1B3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C408E08C2A8A2D9900CEB1B3 /* NetworkHTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHTTPMethod.swift; sourceTree = "<group>"; };
+		C408E08E2A8A3B7400CEB1B3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		C4C0E3BC2A73C0F10044BDE1 /* rick-and-morty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rick-and-morty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C0E3BF2A73C0F10044BDE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4C0E3C82A73C0F10044BDE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -35,6 +41,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C408E0872A8A1E8C00CEB1B3 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
+		C408E0882A8A2A4400CEB1B3 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C408E0892A8A2A6400CEB1B3 /* Network */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		C408E0892A8A2A6400CEB1B3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C408E08A2A8A2A8100CEB1B3 /* NetworkManager.swift */,
+				C408E08C2A8A2D9900CEB1B3 /* NetworkHTTPMethod.swift */,
+				C408E08E2A8A3B7400CEB1B3 /* NetworkError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		C4C0E3B32A73C0F10044BDE1 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +122,7 @@
 		C4C0E3D62A73CC500044BDE1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C408E0882A8A2A4400CEB1B3 /* Manager */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -99,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				C4C0E3D82A73CE0F0044BDE1 /* Splash */,
+				C408E0872A8A1E8C00CEB1B3 /* Characters */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -183,8 +216,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C408E08B2A8A2A8100CEB1B3 /* NetworkManager.swift in Sources */,
+				C408E08D2A8A2D9900CEB1B3 /* NetworkHTTPMethod.swift in Sources */,
 				C4C0E3C02A73C0F10044BDE1 /* AppDelegate.swift in Sources */,
 				C4C0E3DB2A73CE480044BDE1 /* SplashViewController.swift in Sources */,
+				C408E08F2A8A3B7400CEB1B3 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
