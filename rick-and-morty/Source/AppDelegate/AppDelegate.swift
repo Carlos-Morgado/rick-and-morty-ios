@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // We instantiate UIWindow so that it fits the full screen
         window = UIWindow(frame: UIScreen.main.bounds)
         // We instantiate the controller and store it in a constant
-        window?.rootViewController = UINavigationController(rootViewController: SplashViewController())
+        window?.rootViewController = UINavigationController(rootViewController: TabBarViewController())
         // We tell window what is the main view controller
         window?.makeKeyAndVisible()
 
