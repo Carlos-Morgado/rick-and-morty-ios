@@ -12,6 +12,6 @@ class CharactersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Characters"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
-
 }

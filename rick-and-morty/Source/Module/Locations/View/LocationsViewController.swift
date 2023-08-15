@@ -12,7 +12,7 @@ class LocationsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Locations"
-
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
 

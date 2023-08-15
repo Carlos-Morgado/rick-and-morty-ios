@@ -11,28 +11,17 @@ final class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
         setUpTabs()
     }
 
     private func setUpTabs() {
-        let charactersViewController = CharactersViewController()
-        charactersViewController.navigationItem.largeTitleDisplayMode = .automatic
-        let episodesViewController = EpisodesViewController()
-        episodesViewController.navigationItem.largeTitleDisplayMode = .automatic
-        let locationsViewController = LocationsViewController()
-        locationsViewController.navigationItem.largeTitleDisplayMode = .automatic
-        
-        let charactersViewControllerNavigation = UINavigationController(rootViewController: charactersViewController)
+        let charactersViewControllerNavigation = UINavigationController(rootViewController: CharactersViewController())
         charactersViewControllerNavigation.tabBarItem = UITabBarItem(title: "Characters", image: UIImage(systemName: "person"), tag: 1)
-        let episodesViewControllerNavigation = UINavigationController(rootViewController: episodesViewController)
+        let episodesViewControllerNavigation = UINavigationController(rootViewController: EpisodesViewController())
         episodesViewControllerNavigation.tabBarItem = UITabBarItem(title: "Episodes", image: UIImage(systemName: "tv"), tag: 2)
-        let locationsViewControllerNavigation = UINavigationController(rootViewController: locationsViewController)
+        let locationsViewControllerNavigation = UINavigationController(rootViewController: LocationsViewController())
         locationsViewControllerNavigation.tabBarItem = UITabBarItem(title: "Locations", image: UIImage(systemName: "globe"), tag: 3)
         
-        for navigation in [charactersViewControllerNavigation, episodesViewControllerNavigation, locationsViewControllerNavigation] {
-            navigation.navigationBar.prefersLargeTitles = true
-        }
         
         setViewControllers([charactersViewControllerNavigation, episodesViewControllerNavigation, locationsViewControllerNavigation], animated: true)
     }
