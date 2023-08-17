@@ -46,7 +46,7 @@ class CharacterTableViewCell: UITableViewCell {
     
     private lazy var characterLocationLabelTitle: UILabel = {
         let label = UILabel()
-        label.text = "Last known location:"
+        label.text = NSLocalizedString("character-location-label-title", comment: "")
         label.font = .systemFont(ofSize: 12)
         label.textColor = .mainBlue1
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -64,7 +64,7 @@ class CharacterTableViewCell: UITableViewCell {
     
     private lazy var characterEpisodeLabelTitle: UILabel = {
         let label = UILabel()
-        label.text = "First seen in:"
+        label.text = NSLocalizedString("character-episode-label-title", comment: "")
         label.font = .systemFont(ofSize: 12)
         label.textColor = .mainBlue1
         label.translatesAutoresizingMaskIntoConstraints = false

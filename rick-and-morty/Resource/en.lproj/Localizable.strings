@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  rick-and-morty
+
+  Created by Carlos Morgado on 17/8/23.
+  
+*/
+
+"character-location-label-title" = "Last known location:";
+"character-episode-label-title" = "First seen in:";
