@@ -9,7 +9,7 @@ import UIKit
 
 class CharactersViewController: UIViewController {
 
-    private let charactersTableView: UITableView = {
+    private lazy var charactersTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView

@@ -16,9 +16,8 @@ class CharacterTableViewCell: UITableViewCell {
         return view
     }()
     
-    private lazy var characterImageViewAPI: UIImageView = {
+    private lazy var characterImageView: UIImageView = {
         let imageView = UIImageView()
-        //imageView.image = UIImage(systemName: "person.fill")
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.layer.masksToBounds = true
@@ -27,7 +26,7 @@ class CharacterTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    private lazy var characterNameLabelAPI: UILabel = {
+    private lazy var characterNameLabel: UILabel = {
         let label = UILabel()
         label.text = "Name"
         label.font = .systemFont(ofSize: 18, weight: .black)
@@ -36,7 +35,7 @@ class CharacterTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var characterStatusLabelAPI: UILabel = {
+    private lazy var characterStatusLabel: UILabel = {
         let label = UILabel()
         label.text = "Status"
         label.font = .systemFont(ofSize: 12)
@@ -54,7 +53,7 @@ class CharacterTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var characterLocationLabelAPI: UILabel = {
+    private lazy var characterLocationLabel: UILabel = {
         let label = UILabel()
         label.text = "Location given by the API"
         label.font = .systemFont(ofSize: 12, weight: .semibold)
@@ -72,7 +71,7 @@ class CharacterTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var characterEpisodeLabelAPI: UILabel = {
+    private lazy var characterEpisodeLabel: UILabel = {
         let label = UILabel()
         label.text = "Episode given by the API"
         label.font = .systemFont(ofSize: 12, weight: .semibold)
@@ -93,12 +92,6 @@ class CharacterTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
-
 }
 
 // MARK: - EXTENSIONS
@@ -113,32 +106,42 @@ private extension CharacterTableViewCell {
             cardView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             cardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)
         ])
-        cardView.addSubviews(characterImageViewAPI, characterNameLabelAPI, characterStatusLabelAPI, characterLocationLabelTitle, characterLocationLabelAPI, characterEpisodeLabelTitle, characterEpisodeLabelAPI)
+        cardView.addSubview(characterImageView)
         NSLayoutConstraint.activate([
-            characterImageViewAPI.leadingAnchor.constraint(equalTo: cardView.leadingAnchor),
-            characterImageViewAPI.topAnchor.constraint(equalTo: cardView.topAnchor),
-            characterImageViewAPI.bottomAnchor.constraint(equalTo: cardView.bottomAnchor),
-            characterImageViewAPI.widthAnchor.constraint(equalTo: cardView.heightAnchor),
-            
-            characterNameLabelAPI.leadingAnchor.constraint(equalTo: characterImageViewAPI.trailingAnchor, constant: 10),
-            characterNameLabelAPI.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 7),
-            
-            characterStatusLabelAPI.leadingAnchor.constraint(equalTo: characterImageViewAPI.trailingAnchor, constant: 10),
-            characterStatusLabelAPI.topAnchor.constraint(equalTo: characterNameLabelAPI.bottomAnchor, constant: 2),
-            
-            characterLocationLabelTitle.leadingAnchor.constraint(equalTo: characterImageViewAPI.trailingAnchor, constant: 10),
-            characterLocationLabelTitle.topAnchor.constraint(equalTo: characterStatusLabelAPI.bottomAnchor, constant: 10),
-            
-            characterLocationLabelAPI.leadingAnchor.constraint(equalTo: characterImageViewAPI.trailingAnchor, constant: 10),
-            characterLocationLabelAPI.topAnchor.constraint(equalTo: characterLocationLabelTitle.bottomAnchor, constant: 2),
-            
-            characterEpisodeLabelTitle.leadingAnchor.constraint(equalTo: characterImageViewAPI.trailingAnchor, constant: 10),
-            characterEpisodeLabelTitle.topAnchor.constraint(equalTo: characterLocationLabelAPI.bottomAnchor, constant: 10),
-            
-            characterEpisodeLabelAPI.leadingAnchor.constraint(equalTo: characterImageViewAPI.trailingAnchor, constant: 10),
-            characterEpisodeLabelAPI.topAnchor.constraint(equalTo: characterEpisodeLabelTitle.bottomAnchor, constant: 2)
-            
+            characterImageView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor),
+            characterImageView.topAnchor.constraint(equalTo: cardView.topAnchor),
+            characterImageView.bottomAnchor.constraint(equalTo: cardView.bottomAnchor),
+            characterImageView.widthAnchor.constraint(equalTo: cardView.heightAnchor)
+        ])
+        cardView.addSubview(characterNameLabel)
+        NSLayoutConstraint.activate([
+            characterNameLabel.leadingAnchor.constraint(equalTo: characterImageView.trailingAnchor, constant: 10),
+            characterNameLabel.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 7)
+        ])
+        cardView.addSubview(characterStatusLabel)
+        NSLayoutConstraint.activate([
+            characterStatusLabel.leadingAnchor.constraint(equalTo: characterImageView.trailingAnchor, constant: 10),
+            characterStatusLabel.topAnchor.constraint(equalTo: characterNameLabel.bottomAnchor, constant: 2)
+        ])
+        cardView.addSubview(characterLocationLabelTitle)
+        NSLayoutConstraint.activate([
+            characterLocationLabelTitle.leadingAnchor.constraint(equalTo: characterImageView.trailingAnchor, constant: 10),
+            characterLocationLabelTitle.topAnchor.constraint(equalTo: characterStatusLabel.bottomAnchor, constant: 10)
+        ])
+        cardView.addSubview(characterLocationLabel)
+        NSLayoutConstraint.activate([
+            characterLocationLabel.leadingAnchor.constraint(equalTo: characterImageView.trailingAnchor, constant: 10),
+            characterLocationLabel.topAnchor.constraint(equalTo: characterLocationLabelTitle.bottomAnchor, constant: 2)
+        ])
+        cardView.addSubview(characterEpisodeLabelTitle)
+        NSLayoutConstraint.activate([
+            characterEpisodeLabelTitle.leadingAnchor.constraint(equalTo: characterImageView.trailingAnchor, constant: 10),
+            characterEpisodeLabelTitle.topAnchor.constraint(equalTo: characterLocationLabel.bottomAnchor, constant: 10)
+        ])
+        cardView.addSubview(characterEpisodeLabel)
+        NSLayoutConstraint.activate([
+            characterEpisodeLabel.leadingAnchor.constraint(equalTo: characterImageView.trailingAnchor, constant: 10),
+            characterEpisodeLabel.topAnchor.constraint(equalTo: characterEpisodeLabelTitle.bottomAnchor, constant: 2)
         ])
     }
-    
 }

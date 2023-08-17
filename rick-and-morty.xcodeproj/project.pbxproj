@@ -19,7 +19,6 @@
 		C4C0E3CC2A73C0F10044BDE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C0E3CA2A73C0F10044BDE1 /* LaunchScreen.storyboard */; };
 		C4C0E3DB2A73CE480044BDE1 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C0E3D92A73CE480044BDE1 /* SplashViewController.swift */; };
 		C4C0E3DC2A73CE480044BDE1 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4C0E3DA2A73CE480044BDE1 /* SplashViewController.xib */; };
-		C4CEA3A32A8B8462009B4EAE /* UIView + AddSubViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CEA3A22A8B8462009B4EAE /* UIView + AddSubViews.swift */; };
 		C4CEA3A52A8BBB8F009B4EAE /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CEA3A42A8BBB8F009B4EAE /* CharacterTableViewCell.swift */; };
 		C4D4420D2A8CC73300DDABD5 /* UIColor+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D4420C2A8CC73300DDABD5 /* UIColor+Settings.swift */; };
 /* End PBXBuildFile section */
@@ -39,7 +38,6 @@
 		C4C0E3CD2A73C0F10044BDE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4C0E3D92A73CE480044BDE1 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		C4C0E3DA2A73CE480044BDE1 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
-		C4CEA3A22A8B8462009B4EAE /* UIView + AddSubViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + AddSubViews.swift"; sourceTree = "<group>"; };
 		C4CEA3A42A8BBB8F009B4EAE /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
 		C4D4420C2A8CC73300DDABD5 /* UIColor+Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Settings.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -216,7 +214,6 @@
 		C4CEA3A12A8B8433009B4EAE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				C4CEA3A22A8B8462009B4EAE /* UIView + AddSubViews.swift */,
 				C4D4420C2A8CC73300DDABD5 /* UIColor+Settings.swift */,
 			);
 			path = Extensions;
@@ -303,7 +300,6 @@
 				C408E0912A8A5C9800CEB1B3 /* TabBarViewController.swift in Sources */,
 				C408E08F2A8A3B7400CEB1B3 /* NetworkError.swift in Sources */,
 				C4D4420D2A8CC73300DDABD5 /* UIColor+Settings.swift in Sources */,
-				C4CEA3A32A8B8462009B4EAE /* UIView + AddSubViews.swift in Sources */,
 				C4CEA3A52A8BBB8F009B4EAE /* CharacterTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
