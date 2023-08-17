@@ -6,5 +6,12 @@
   
 */
 
-"character-location-label-title" = "Última localización conocida:";
-"character-episode-label-title" = "Visto por primera vez en:";
+// MARK: - CHARACTERS SCREEN
+
+"characters_screen_navigarion_title" = "Personajes";
+"character_name_label_card" = "Nombre";
+"character_status-label_card" = "Estado";
+"character_location_label_title" = "Última localización conocida:";
+"character_location_label_result" = "Localización dada por la API";
+"character_episode_label_title" = "Visto por primera vez en:";
+"character_episode_label_result" = "El dato dado por la API";

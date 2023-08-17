@@ -6,5 +6,10 @@
   
 */
 
-"character-location-label-title" = "Last known location:";
-"character-episode-label-title" = "First seen in:";
+"characters_screen_navigarion_title" = "Characters";
+"character_name_label_card" = "Name";
+"character_status-label_card" = "Status";
+"character_location_label_title" = "Last known location:";
+"character_location_label_result" = "Location given by the API";
+"character_episode_label_title" = "First seen in:";
+"character_episode_label_result" = "Episode given by the API";
