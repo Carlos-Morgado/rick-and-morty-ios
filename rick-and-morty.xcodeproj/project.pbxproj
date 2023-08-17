@@ -19,6 +19,8 @@
 		C4C0E3CC2A73C0F10044BDE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C0E3CA2A73C0F10044BDE1 /* LaunchScreen.storyboard */; };
 		C4C0E3DB2A73CE480044BDE1 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C0E3D92A73CE480044BDE1 /* SplashViewController.swift */; };
 		C4C0E3DC2A73CE480044BDE1 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4C0E3DA2A73CE480044BDE1 /* SplashViewController.xib */; };
+		C4CEA3A52A8BBB8F009B4EAE /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CEA3A42A8BBB8F009B4EAE /* CharacterTableViewCell.swift */; };
+		C4D4420D2A8CC73300DDABD5 /* UIColor+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D4420C2A8CC73300DDABD5 /* UIColor+Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		C4C0E3CD2A73C0F10044BDE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4C0E3D92A73CE480044BDE1 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		C4C0E3DA2A73CE480044BDE1 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		C4CEA3A42A8BBB8F009B4EAE /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
+		C4D4420C2A8CC73300DDABD5 /* UIColor+Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Settings.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				C408E0922A8A5FC000CEB1B3 /* CharactersViewController.swift */,
+				C4CEA3A42A8BBB8F009B4EAE /* CharacterTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 		C4C0E3D62A73CC500044BDE1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C4CEA3A12A8B8433009B4EAE /* Extensions */,
 				C408E0882A8A2A4400CEB1B3 /* Manager */,
 			);
 			path = Common;
@@ -203,6 +209,14 @@
 				C4C0E3DA2A73CE480044BDE1 /* SplashViewController.xib */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		C4CEA3A12A8B8433009B4EAE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C4D4420C2A8CC73300DDABD5 /* UIColor+Settings.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +299,8 @@
 				C4C0E3DB2A73CE480044BDE1 /* SplashViewController.swift in Sources */,
 				C408E0912A8A5C9800CEB1B3 /* TabBarViewController.swift in Sources */,
 				C408E08F2A8A3B7400CEB1B3 /* NetworkError.swift in Sources */,
+				C4D4420D2A8CC73300DDABD5 /* UIColor+Settings.swift in Sources */,
+				C4CEA3A52A8BBB8F009B4EAE /* CharacterTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +445,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -461,6 +478,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
