@@ -28,7 +28,7 @@ class CharacterTableViewCell: UITableViewCell {
     
     private lazy var characterNameLabel: UILabel = {
         let label = UILabel()
-        label.text = NSLocalizedString("character_name_label_card", comment: "")
+        label.text = "character_name_label_card".localized
         label.font = .systemFont(ofSize: 18, weight: .black)
         label.textColor = .mainGreen1
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -37,7 +37,7 @@ class CharacterTableViewCell: UITableViewCell {
     
     private lazy var characterStatusLabel: UILabel = {
         let label = UILabel()
-        label.text = NSLocalizedString("character_status_label_card", comment: "")
+        label.text = "character_status_label_card".localized
         label.font = .systemFont(ofSize: 12)
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -46,7 +46,7 @@ class CharacterTableViewCell: UITableViewCell {
     
     private lazy var characterLocationLabelTitle: UILabel = {
         let label = UILabel()
-        label.text = NSLocalizedString("character_location_label_title", comment: "")
+        label.text = "character_location_label_title".localized
         label.font = .systemFont(ofSize: 12)
         label.textColor = .mainBlue1
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -55,7 +55,7 @@ class CharacterTableViewCell: UITableViewCell {
     
     private lazy var characterLocationLabel: UILabel = {
         let label = UILabel()
-        label.text = NSLocalizedString("character_location_label_result", comment: "")
+        label.text = "character_location_label_result".localized
         label.font = .systemFont(ofSize: 12, weight: .semibold)
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -64,7 +64,7 @@ class CharacterTableViewCell: UITableViewCell {
     
     private lazy var characterEpisodeLabelTitle: UILabel = {
         let label = UILabel()
-        label.text = NSLocalizedString("character_episode_label_title", comment: "")
+        label.text = "character_episode_label_title".localized
         label.font = .systemFont(ofSize: 12)
         label.textColor = .mainBlue1
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -73,7 +73,7 @@ class CharacterTableViewCell: UITableViewCell {
     
     private lazy var characterEpisodeLabel: UILabel = {
         let label = UILabel()
-        label.text = NSLocalizedString("character_episode_label_result", comment: "")
+        label.text = "character_episode_label_result".localized
         label.font = .systemFont(ofSize: 12, weight: .semibold)
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
