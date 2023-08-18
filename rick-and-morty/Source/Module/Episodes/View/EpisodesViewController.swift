@@ -11,7 +11,7 @@ class EpisodesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Episodes"
+        title = "episodes_screen_navigation_title".localized
         navigationController?.navigationBar.prefersLargeTitles = true
         
     }

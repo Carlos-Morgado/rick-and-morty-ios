@@ -11,7 +11,7 @@ class LocationsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Locations"
+        title = "locations_screen_navigation_title".localized
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     

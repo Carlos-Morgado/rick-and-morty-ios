@@ -26,8 +26,10 @@ class CharactersViewController: UIViewController {
 
 private extension CharactersViewController {
     func configView() {
-        title = "Characters"
+        title = "characters_screen_navigation_title".localized
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.barStyle = .default
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         view.backgroundColor = .mainBackgroundColor1
         view.addSubview(charactersTableView)
         configCharactersTableView()
