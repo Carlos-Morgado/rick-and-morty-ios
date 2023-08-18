@@ -37,7 +37,7 @@ class CharacterTableViewCell: UITableViewCell {
     
     private lazy var characterStatusLabel: UILabel = {
         let label = UILabel()
-        label.text = NSLocalizedString("character_status-label_card", comment: "")
+        label.text = NSLocalizedString("character_status_label_card", comment: "")
         label.font = .systemFont(ofSize: 12)
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false

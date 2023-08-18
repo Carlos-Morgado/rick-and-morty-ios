@@ -26,7 +26,7 @@ class CharactersViewController: UIViewController {
 
 private extension CharactersViewController {
     func configView() {
-        title = NSLocalizedString("characters_screen_navigarion_title", comment: "")
+        title = NSLocalizedString("characters_screen_navigation_title", comment: "")
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.barStyle = .default
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]

@@ -16,11 +16,11 @@ final class TabBarViewController: UITabBarController {
 
     private func setUpTabs() {
         let charactersViewControllerNavigation = UINavigationController(rootViewController: CharactersViewController())
-        charactersViewControllerNavigation.tabBarItem = UITabBarItem(title: "Characters", image: UIImage(systemName: "person"), tag: 1)
+        charactersViewControllerNavigation.tabBarItem = UITabBarItem(title: NSLocalizedString("characters_screen_navigation_title", comment: ""), image: UIImage(systemName: "person"), tag: 1)
         let episodesViewControllerNavigation = UINavigationController(rootViewController: EpisodesViewController())
-        episodesViewControllerNavigation.tabBarItem = UITabBarItem(title: "Episodes", image: UIImage(systemName: "tv"), tag: 2)
+        episodesViewControllerNavigation.tabBarItem = UITabBarItem(title: NSLocalizedString("episodes_screen_navigation_title", comment: ""), image: UIImage(systemName: "tv"), tag: 2)
         let locationsViewControllerNavigation = UINavigationController(rootViewController: LocationsViewController())
-        locationsViewControllerNavigation.tabBarItem = UITabBarItem(title: "Locations", image: UIImage(systemName: "globe"), tag: 3)
+        locationsViewControllerNavigation.tabBarItem = UITabBarItem(title: NSLocalizedString("locations_screen_navigation_title", comment: ""), image: UIImage(systemName: "globe"), tag: 3)
         
         
         setViewControllers([charactersViewControllerNavigation, episodesViewControllerNavigation, locationsViewControllerNavigation], animated: true)
