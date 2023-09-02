@@ -9,12 +9,12 @@
 // MARK: - CHARACTERS SCREEN
 
 "characters_screen_navigation_title" = "Characters";
-"character_name_label_card" = "Name";
-"character_status_label_card" = "Status";
 "character_location_label_title" = "Last known location:";
-"character_location_label_result" = "Location given by the API";
 "character_episode_label_title" = "First seen in:";
-"character_episode_label_result" = "Episode given by the API";
+"characters_network_error_alert_title" = "Error";
+"characters_network_error_alert_message" = "There was an error with the network";
+"characters_network_error_alert_button" = "Retry";
+"characters_table_view_refresh_control" = "Pull to refresh";
 
 // MARK: - EPISODES SCREEN
 

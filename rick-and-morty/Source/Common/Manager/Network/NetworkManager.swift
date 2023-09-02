@@ -9,8 +9,7 @@ import Foundation
 
 protocol NetworkManager {
     
-    func request<T: Decodable>(url: URL, httpMethod: NetworkHttpMethod, successCompletion: @escaping (T) -> Void, errorCompletion: @escaping (Error) -> Void)
-    
+    func request<T: Decodable>(url: URL, httpMethod: NetworkHttpMethod, successCompletionNetworkManager: @escaping (T) -> Void, errorCompletionNetworkManager: @escaping (Error) -> Void)
 }
 
 struct DefaultNetworkManager {
@@ -25,33 +24,33 @@ struct DefaultNetworkManager {
 
 extension DefaultNetworkManager: NetworkManager {
     
-    func request<T: Decodable>(url: URL, httpMethod: NetworkHttpMethod, successCompletion: @escaping (T) -> Void, errorCompletion: @escaping (Error) -> Void) {
+    func request<T: Decodable>(url: URL, httpMethod: NetworkHttpMethod, successCompletionNetworkManager: @escaping (T) -> Void, errorCompletionNetworkManager: @escaping (Error) -> Void) {
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod.rawValue
         
         session.dataTask(with: request) { data, response, error in
             if let error = error {
                 DispatchQueue.main.async {
-                    errorCompletion(NetworkError.requestError(error))
+                    errorCompletionNetworkManager(NetworkError.requestError(error))
                 }
             } else {
                 guard let httpResponse = response as? HTTPURLResponse else {
                     DispatchQueue.main.async {
-                        errorCompletion(NetworkError.invalidResponse)
+                        errorCompletionNetworkManager(NetworkError.invalidResponse)
                     }
                     return
                 }
                 
                 guard (200...299).contains(httpResponse.statusCode) else {
                     DispatchQueue.main.async {
-                        errorCompletion(NetworkError.invalidStatusCode(httpResponse.statusCode))
+                        errorCompletionNetworkManager(NetworkError.invalidStatusCode(httpResponse.statusCode))
                     }
                     return
                 }
                 
                 guard let data = data else {
                     DispatchQueue.main.async {
-                        errorCompletion(NetworkError.invalidData)
+                        errorCompletionNetworkManager(NetworkError.invalidData)
                     }
                     return
                 }
@@ -59,13 +58,13 @@ extension DefaultNetworkManager: NetworkManager {
                 do {
                     let decodedObject = try JSONDecoder().decode(T.self, from: data)
                     DispatchQueue.main.async {
-                        successCompletion(decodedObject)
+                        successCompletionNetworkManager(decodedObject)
                     }
                 } catch {
                     debugPrint("Could not decode received data from URL \(url) to object \(T.self)")
                     debugPrint("Decoder error: \(error)")
                     DispatchQueue.main.async {
-                        errorCompletion(NetworkError.invalidData)
+                        errorCompletionNetworkManager(NetworkError.invalidData)
                     }
                 }
             }

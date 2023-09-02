@@ -15,7 +15,7 @@ final class TabBarViewController: UITabBarController {
     }
 
     private func setUpTabs() {
-        let charactersViewControllerNavigation = UINavigationController(rootViewController: CharactersViewController())
+        let charactersViewControllerNavigation = UINavigationController(rootViewController: DefaultCharactersRouter.create())
         charactersViewControllerNavigation.tabBarItem = UITabBarItem(title: ("characters_screen_navigation_title".localized), image: UIImage(systemName: "person"), tag: 1)
         let episodesViewControllerNavigation = UINavigationController(rootViewController: EpisodesViewController())
         episodesViewControllerNavigation.tabBarItem = UITabBarItem(title: ("episodes_screen_navigation_title".localized), image: UIImage(systemName: "tv"), tag: 2)

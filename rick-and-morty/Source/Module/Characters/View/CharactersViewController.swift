@@ -7,7 +7,14 @@
 
 import UIKit
 
-class CharactersViewController: UIViewController {
+protocol CharactersView: AnyObject {
+    // Presenter -> View
+    func showCharactersList()
+}
+
+final class CharactersViewController: UIViewController {
+    
+    var presenter: CharactersPresenter?
 
     private lazy var charactersTableView: UITableView = {
         let tableView = UITableView()
@@ -18,11 +25,19 @@ class CharactersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
+        presenter?.viewDidLoad()
     }
 
 }
 
 // MARK: - EXTENSIONS
+
+extension CharactersViewController: CharactersView {
+    
+    func showCharactersList() {
+        charactersTableView.reloadData()
+    }
+}
 
 private extension CharactersViewController {
     func configView() {
@@ -39,6 +54,7 @@ private extension CharactersViewController {
             charactersTableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
             charactersTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
+        
     }
     
     func configCharactersTableView() {
@@ -46,17 +62,21 @@ private extension CharactersViewController {
         charactersTableView.delegate = self
         charactersTableView.isScrollEnabled = true
         charactersTableView.register(CharacterTableViewCell.self, forCellReuseIdentifier: "characterTableViewCell")
+    
     }
 }
 
 extension CharactersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return presenter?.characters.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = charactersTableView.dequeueReusableCell(withIdentifier: "characterTableViewCell")
-        return cell!
+        guard let cell = charactersTableView.dequeueReusableCell(withIdentifier: "characterTableViewCell") as? CharacterTableViewCell, let character = presenter?.characters[indexPath.row] else {
+            return UITableViewCell()
+        }
+        cell.setCharacterName(character.name)
+        return cell
     }
 }
 

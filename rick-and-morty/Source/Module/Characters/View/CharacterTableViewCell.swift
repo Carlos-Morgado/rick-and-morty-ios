@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CharacterTableViewCell: UITableViewCell {
+final class CharacterTableViewCell: UITableViewCell {
     private lazy var cardView: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -28,7 +28,6 @@ class CharacterTableViewCell: UITableViewCell {
     
     private lazy var characterNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "character_name_label_card".localized
         label.font = .systemFont(ofSize: 18, weight: .black)
         label.textColor = .mainGreen1
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -37,7 +36,6 @@ class CharacterTableViewCell: UITableViewCell {
     
     private lazy var characterStatusLabel: UILabel = {
         let label = UILabel()
-        label.text = "character_status_label_card".localized
         label.font = .systemFont(ofSize: 12)
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -55,7 +53,6 @@ class CharacterTableViewCell: UITableViewCell {
     
     private lazy var characterLocationLabel: UILabel = {
         let label = UILabel()
-        label.text = "character_location_label_result".localized
         label.font = .systemFont(ofSize: 12, weight: .semibold)
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -73,7 +70,6 @@ class CharacterTableViewCell: UITableViewCell {
     
     private lazy var characterEpisodeLabel: UILabel = {
         let label = UILabel()
-        label.text = "character_episode_label_result".localized
         label.font = .systemFont(ofSize: 12, weight: .semibold)
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -91,6 +87,10 @@ class CharacterTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    func setCharacterName(_ name: String) {
+        characterNameLabel.text = name
     }
 }
 
