@@ -22,7 +22,7 @@ final class DefaultCharactersPresenter {
     private let router: CharactersRouter
     private let getCharactersInteractor: GetCharactersInteractorInput
     
-    init(router: CharactersRouter, viewController: CharactersView ,getCharactersInteractor: GetCharactersInteractorInput) {
+    init(router: CharactersRouter, viewController: CharactersView, getCharactersInteractor: GetCharactersInteractorInput) {
         self.router = router
         self.viewController = viewController
         self.getCharactersInteractor = getCharactersInteractor

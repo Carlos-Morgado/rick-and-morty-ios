@@ -42,9 +42,14 @@ extension CharactersViewController: CharactersView {
 private extension CharactersViewController {
     func configView() {
         title = "characters_screen_navigation_title".localized
-        navigationController?.navigationBar.prefersLargeTitles = true
+        // let VC = CharactersViewController()
+        // VC.navigationItem.largeTitleDisplayMode = .never
         navigationController?.navigationBar.barStyle = .default
+        navigationController?.navigationBar.barTintColor = .mainBackgroundColor1
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         view.backgroundColor = .mainBackgroundColor1
         view.addSubview(charactersTableView)
         configCharactersTableView()
@@ -54,15 +59,14 @@ private extension CharactersViewController {
             charactersTableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
             charactersTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
-        
     }
     
     func configCharactersTableView() {
         charactersTableView.dataSource = self
         charactersTableView.delegate = self
         charactersTableView.isScrollEnabled = true
+        charactersTableView.backgroundColor = .clear
         charactersTableView.register(CharacterTableViewCell.self, forCellReuseIdentifier: "characterTableViewCell")
-    
     }
 }
 
@@ -75,15 +79,15 @@ extension CharactersViewController: UITableViewDataSource {
         guard let cell = charactersTableView.dequeueReusableCell(withIdentifier: "characterTableViewCell") as? CharacterTableViewCell, let character = presenter?.characters[indexPath.row] else {
             return UITableViewCell()
         }
-        cell.setCharacterName(character.name)
+        cell.setCellLabelTexts(character.name, character.status.fixedText, character.species, character.location.name)
+        cell.setCellCharacterImage(character.image)
         return cell
     }
 }
 
 extension CharactersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160
+        return 130
     }
-    
 }
 

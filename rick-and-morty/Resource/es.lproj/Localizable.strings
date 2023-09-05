@@ -11,7 +11,6 @@
 "characters_screen_navigation_title" = "Personajes";
 "character_name_label_card" = "Nombre";
 "character_location_label_title" = "Última localización conocida:";
-"character_episode_label_title" = "Visto por primera vez en:";
 "characters_network_error_alert_title" = "Error";
 "characters_network_error_alert_message" = "Hubo un error con la red";
 "characters_network_error_alert_button" = "Reintentar";

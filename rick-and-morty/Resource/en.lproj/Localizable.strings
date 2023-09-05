@@ -10,7 +10,6 @@
 
 "characters_screen_navigation_title" = "Characters";
 "character_location_label_title" = "Last known location:";
-"character_episode_label_title" = "First seen in:";
 "characters_network_error_alert_title" = "Error";
 "characters_network_error_alert_message" = "There was an error with the network";
 "characters_network_error_alert_button" = "Retry";
