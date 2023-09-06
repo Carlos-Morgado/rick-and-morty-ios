@@ -116,7 +116,7 @@ final class CharacterTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func setCellLabelTexts(_ name: String, _ status: String, _ species: String , _ location: String) {
+    func setCellLabelTexts(setName name: String, setStatus status: String, setSpecies species: String , setLocation location: String) {
         characterNameLabel.text = name
         characterStatusLabel.text = status
         characterSpeciesLabel.text = species

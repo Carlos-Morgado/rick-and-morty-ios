@@ -42,8 +42,6 @@ extension CharactersViewController: CharactersView {
 private extension CharactersViewController {
     func configView() {
         title = "characters_screen_navigation_title".localized
-        // let VC = CharactersViewController()
-        // VC.navigationItem.largeTitleDisplayMode = .never
         navigationController?.navigationBar.barStyle = .default
         navigationController?.navigationBar.barTintColor = .mainBackgroundColor1
         navigationController?.navigationBar.prefersLargeTitles = false
@@ -79,7 +77,7 @@ extension CharactersViewController: UITableViewDataSource {
         guard let cell = charactersTableView.dequeueReusableCell(withIdentifier: "characterTableViewCell") as? CharacterTableViewCell, let character = presenter?.characters[indexPath.row] else {
             return UITableViewCell()
         }
-        cell.setCellLabelTexts(character.name, character.status.fixedText, character.species, character.location.name)
+        cell.setCellLabelTexts(setName: character.name, setStatus: character.status.fixedText, setSpecies: character.species, setLocation: character.location.name)
         cell.setCellCharacterImage(character.image)
         return cell
     }

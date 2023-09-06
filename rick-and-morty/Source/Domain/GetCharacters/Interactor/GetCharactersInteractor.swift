@@ -15,7 +15,7 @@ protocol GetCharactersInteractorOutput: AnyObject {
 
 protocol GetCharactersInteractorInput {
     // Presenter -> Interactor
-    var presenter: GetCharactersInteractorOutput? { get set } // Variables de lectura y escritura
+    var presenter: GetCharactersInteractorOutput? { get set } // Reading and writting variables
     func getCharacters()
 }
 
@@ -33,7 +33,7 @@ final class DefaultGetCharactersInteractor {
 
 extension DefaultGetCharactersInteractor: GetCharactersInteractorInput {
     func getCharacters() {
-        characterDataSource.getCharacters(successCompletionDataSource: { [weak self] characters in // Nombre de la variable del successCompletion del DataSource
+        characterDataSource.getCharacters(successCompletionDataSource: { [weak self] characters in // DataSource successCompletion variable name
            self?.presenter?.manageGetCharactersSuccess(characters: characters)
         }, errorCompletionDataSource: { [weak self] _ in
             self?.presenter?.manageGetCharactersError()
