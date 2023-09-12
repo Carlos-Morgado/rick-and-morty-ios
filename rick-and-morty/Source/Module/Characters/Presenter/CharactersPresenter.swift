@@ -11,6 +11,7 @@ protocol CharactersPresenter {
     // View -> Presenter
     var characters: [CharacterDTO] { get }
     func viewDidLoad()
+    func didSelectRowAt(_ indexPath: IndexPath)
     
 }
 
@@ -38,6 +39,10 @@ extension DefaultCharactersPresenter: CharactersPresenter {
         getCharactersInteractor.getCharacters()
     }
     
+    func didSelectRowAt(_ indexPath: IndexPath) {
+        let character = characters[indexPath.row]
+        router.navigateToCharacterDetail(character)
+    }
 }
 
 extension DefaultCharactersPresenter: GetCharactersInteractorOutput {
@@ -49,6 +54,4 @@ extension DefaultCharactersPresenter: GetCharactersInteractorOutput {
     func manageGetCharactersError() {
         router.showNetworkErrorAlert()
     }
-    
-    
 }

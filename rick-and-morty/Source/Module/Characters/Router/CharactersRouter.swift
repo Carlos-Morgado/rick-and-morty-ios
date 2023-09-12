@@ -10,7 +10,7 @@ import UIKit
 
 protocol CharactersRouter {
     var viewController: UIViewController? { get set }
-    
+    func navigateToCharacterDetail(_ character: CharacterDTO)
     func showNetworkErrorAlert()
 }
 
@@ -36,6 +36,11 @@ final class DefaultCharactersRouter {
 // MARK: - EXTENSIONS
 
 extension DefaultCharactersRouter: CharactersRouter {
+    func navigateToCharacterDetail(_ character: CharacterDTO) {
+        let characterDetailModule = DefaultCharacterDetailRouter.create(character: character)
+        viewController?.navigationController?.pushViewController(characterDetailModule, animated: true)
+    }
+    
     func showNetworkErrorAlert() {
         let alert = UIAlertController(title: "characters_network_error_alert_title".localized, message: "characters_network_error_alert_message".localized, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "characters_network_error_alert_button".localized, style: .default, handler: { action in
