@@ -15,6 +15,11 @@
 "characters_network_error_alert_button" = "Retry";
 "characters_table_view_refresh_control" = "Pull to refresh";
 
+// MARK: - CHARACTER DETAIL SCREEN
+
+"character_info_header_section" = "Information";
+"character_episode_header_section" = "Episodes";
+
 // MARK: - EPISODES SCREEN
 
 "episodes_screen_navigation_title" = "Episodes";
