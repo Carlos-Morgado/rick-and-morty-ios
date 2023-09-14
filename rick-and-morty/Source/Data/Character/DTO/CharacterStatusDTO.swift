@@ -12,12 +12,14 @@ enum CharacterStatusDTO: String, Decodable {
     case dead = "Dead"
     case unknown = "unknown"
     
-    var fixedText: String {
+    var localizedText: String {
         switch self {
-        case .alive, .dead:
-            return rawValue
+        case .alive:
+            return "character-status-alive-value-info".localized
+        case .dead:
+            return "character-status-dead-value-info".localized
         case .unknown:
-            return "Unknown"
+            return "character-status-unknown-value-info".localized
         }
     }
 }

@@ -47,9 +47,9 @@ extension DefaultCharacterDetailPresenter: CharacterDetailPresenter {
         var value: String = ""
         switch infoType {
         case .status:
-            value = character.status.fixedText
+            value = character.status.localizedText
         case .gender:
-            value = character.gender.rawValue
+            value = character.gender.localizedText
         case .type:
             value = character.type.isEmpty ? "None" : character.type
         case .species:

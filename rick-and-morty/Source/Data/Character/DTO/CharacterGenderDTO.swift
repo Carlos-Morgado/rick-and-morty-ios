@@ -13,13 +13,16 @@ enum CharacterGenderDTO: String, Decodable {
     case genderless = "Genderless"
     case unknown = "unknown"
     
-    var fixedText: String {
+    var localizedText: String {
         switch self {
+        case .male:
+            return "character-gender-male-value-info".localized
+        case .female:
+            return "character-gender-female-value-info".localized
+        case .genderless:
+            return "character-gender-genderless-value-info".localized
         case .unknown:
-            return "Unknown"
-        default:
-            return rawValue
+            return "character-gender-unknown-value-info".localized
         }
-        
     }
 }

@@ -59,7 +59,6 @@ private extension CharacterInfoCollectionViewCell {
             characterInfoTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             characterInfoTitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             characterInfoTitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            //characterInfoTitleLabel.heightAnchor.constraint(equalToConstant: 50)
         ])
         contentView.addSubview(characterInfoValueLabel)
         NSLayoutConstraint.activate([
@@ -67,7 +66,6 @@ private extension CharacterInfoCollectionViewCell {
             characterInfoValueLabel.topAnchor.constraint(equalTo: characterInfoTitleLabel.bottomAnchor, constant: 10),
             characterInfoValueLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             characterInfoValueLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            //characterInfoValueLabel.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
 }

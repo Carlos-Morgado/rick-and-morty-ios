@@ -77,7 +77,7 @@ extension CharactersViewController: UITableViewDataSource {
         guard let cell = charactersTableView.dequeueReusableCell(withIdentifier: "characterTableViewCell") as? CharacterTableViewCell, let character = presenter?.characters[indexPath.row] else {
             return UITableViewCell()
         }
-        cell.setCellLabelTexts(setName: character.name, setStatus: character.status.fixedText, setSpecies: character.species, setLocation: character.location.name)
+        cell.setCellLabelTexts(setName: character.name, setStatus: character.status.localizedText, setSpecies: character.species, setLocation: character.location.name)
         cell.setCellCharacterImage(character.image)
         return cell
     }

@@ -19,7 +19,14 @@
 // MARK: - CHARACTER DETAIL SCREEN
 
 "character-status-type-info" = "Estado";
+"character-status-alive-value-info" = "Vivo";
+"character-status-dead-value-info" = "Muerto";
+"character-status-unknown-value-info" = "Desconocido";
 "character-gender-type-info" = "Género";
+"character-gender-male-value-info" = "Masculino";
+"character-gender-female-value-info" = "Femenino";
+"character-gender-genderless-value-info" = "Sin género";
+"character-gender-unknown-value-info" = "Desconocido";
 "character-type-type-info" = "Tipo";
 "character-species-type-info" = "Especie";
 "character-origin-type-info" = "Origen";
