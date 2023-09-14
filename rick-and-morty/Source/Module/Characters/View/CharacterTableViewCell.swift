@@ -46,8 +46,6 @@ final class CharacterTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    
-    
     private lazy var characterStatusLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14)

@@ -17,8 +17,21 @@
 
 // MARK: - CHARACTER DETAIL SCREEN
 
-"character_info_header_section" = "Information";
-"character_episode_header_section" = "Episodes";
+"character-status-type-info" = "Status";
+"character-status-alive-value-info" = "Alive";
+"character-status-dead-value-info" = "Dead";
+"character-status-unknown-value-info" = "Unknown";
+"character-gender-type-info" = "Gender";
+"character-gender-male-value-info" = "Male";
+"character-gender-female-value-info" = "Female";
+"character-gender-genderless-value-info" = "Genderless";
+"character-gender-unknown-value-info" = "Unknown";
+"character-type-type-info" = "Type";
+"character-species-type-info" = "Species";
+"character-origin-type-info" = "Origin";
+"character-location-type-info" = "Location";
+"character-created-type-info" = "Created";
+"character-episode-count-type-info" = "Episode count";
 
 // MARK: - EPISODES SCREEN
 
