@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class CharacterPhotoCollectionViewCell: UICollectionViewCell {
     static let identifier = "CharacterPhotoCollectionViewCell"
@@ -26,6 +27,11 @@ final class CharacterPhotoCollectionViewCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError()
+    }
+    
+    func setCellCharacterImage(_ image: String) {
+        let characterImageURL = URL(string: image)
+        imageView.kf.setImage(with: characterImageURL)
     }
 }
 

@@ -12,4 +12,14 @@ enum CharacterGenderDTO: String, Decodable {
     case female = "Female"
     case genderless = "Genderless"
     case unknown = "unknown"
+    
+    var fixedText: String {
+        switch self {
+        case .unknown:
+            return "Unknown"
+        default:
+            return rawValue
+        }
+        
+    }
 }
