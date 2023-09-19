@@ -38,6 +38,8 @@
 		C46826E82A9368C90031167F /* CharacterLocationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46826E72A9368C90031167F /* CharacterLocationDTO.swift */; };
 		C46826EB2A93B61A0031167F /* NetworkURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46826EA2A93B61A0031167F /* NetworkURL.swift */; };
 		C47764B02AB21F8100196763 /* CharacterTypeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47764AF2AB21F8100196763 /* CharacterTypeInfo.swift */; };
+		C48E84172AB9A7C70023981A /* EpisodeDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E84162AB9A7C70023981A /* EpisodeDetailRouter.swift */; };
+		C48E84192AB9A7DA0023981A /* EpisodeDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E84182AB9A7DA0023981A /* EpisodeDetailPresenter.swift */; };
 		C4BD37492AA9C5AD00979D5D /* CharacterInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD37482AA9C5AD00979D5D /* CharacterInfoCollectionViewCell.swift */; };
 		C4C0E3C02A73C0F10044BDE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C0E3BF2A73C0F10044BDE1 /* AppDelegate.swift */; };
 		C4C0E3C92A73C0F10044BDE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4C0E3C82A73C0F10044BDE1 /* Assets.xcassets */; };
@@ -88,6 +90,8 @@
 		C46826E72A9368C90031167F /* CharacterLocationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterLocationDTO.swift; sourceTree = "<group>"; };
 		C46826EA2A93B61A0031167F /* NetworkURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkURL.swift; sourceTree = "<group>"; };
 		C47764AF2AB21F8100196763 /* CharacterTypeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTypeInfo.swift; sourceTree = "<group>"; };
+		C48E84162AB9A7C70023981A /* EpisodeDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailRouter.swift; sourceTree = "<group>"; };
+		C48E84182AB9A7DA0023981A /* EpisodeDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailPresenter.swift; sourceTree = "<group>"; };
 		C4BD37482AA9C5AD00979D5D /* CharacterInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		C4C0E3BC2A73C0F10044BDE1 /* rick-and-morty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rick-and-morty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C0E3BF2A73C0F10044BDE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -342,7 +346,9 @@
 		C45EA1502AB4A36D006228D4 /* EpisodeDetail */ = {
 			isa = PBXGroup;
 			children = (
+				C48E84142AB9A7980023981A /* Router */,
 				C45EA1512AB4A390006228D4 /* View */,
+				C48E84152AB9A7A00023981A /* Presenter */,
 			);
 			path = EpisodeDetail;
 			sourceTree = "<group>";
@@ -353,6 +359,22 @@
 				C45EA1522AB4A3AB006228D4 /* EpisodeDetailViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C48E84142AB9A7980023981A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				C48E84162AB9A7C70023981A /* EpisodeDetailRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		C48E84152AB9A7A00023981A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				C48E84182AB9A7DA0023981A /* EpisodeDetailPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		C4C0E3B32A73C0F10044BDE1 = {
@@ -644,6 +666,7 @@
 				C442A0D72A8FB608001FBF70 /* CharacterDataSource.swift in Sources */,
 				C408E0992A8A606400CEB1B3 /* LocationsViewController.swift in Sources */,
 				C442A0D12A8F79B9001FBF70 /* CharactersRouter.swift in Sources */,
+				C48E84172AB9A7C70023981A /* EpisodeDetailRouter.swift in Sources */,
 				C46826E62A9367C60031167F /* CharacterOriginDTO.swift in Sources */,
 				C4C66BEB2AA8729300407E0D /* CharacterDetailViewController.swift in Sources */,
 				C408E0962A8A601E00CEB1B3 /* EpisodesViewController.swift in Sources */,
@@ -653,6 +676,7 @@
 				C442A0CD2A8F7889001FBF70 /* GetCharactersInteractor.swift in Sources */,
 				C47764B02AB21F8100196763 /* CharacterTypeInfo.swift in Sources */,
 				C4D1356B2A96536C0044E5EB /* AllCharactersDTO.swift in Sources */,
+				C48E84192AB9A7DA0023981A /* EpisodeDetailPresenter.swift in Sources */,
 				C45EA1452AB45F59006228D4 /* EpisodesRouter.swift in Sources */,
 				C4D135662A9612820044E5EB /* NetworkEndpoint.swift in Sources */,
 				C442A0D32A8F79C6001FBF70 /* CharactersPresenter.swift in Sources */,
