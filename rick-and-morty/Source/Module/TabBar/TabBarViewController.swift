@@ -21,7 +21,7 @@ final class TabBarViewController: UITabBarController {
         tabBar.unselectedItemTintColor = UIColor.mainBlue1
         let charactersViewControllerNavigation = UINavigationController(rootViewController: DefaultCharactersRouter.create())
         charactersViewControllerNavigation.tabBarItem = UITabBarItem(title: ("characters_screen_navigation_title".localized), image: UIImage(systemName: "person"), tag: 1)
-        let episodesViewControllerNavigation = UINavigationController(rootViewController: EpisodesViewController())
+        let episodesViewControllerNavigation = UINavigationController(rootViewController: DefaultEpisodesRouter.create())
         episodesViewControllerNavigation.tabBarItem = UITabBarItem(title: ("episodes_screen_navigation_title".localized), image: UIImage(systemName: "tv"), tag: 2)
         let locationsViewControllerNavigation = UINavigationController(rootViewController: LocationsViewController())
         locationsViewControllerNavigation.tabBarItem = UITabBarItem(title: ("locations_screen_navigation_title".localized), image: UIImage(systemName: "globe"), tag: 3)

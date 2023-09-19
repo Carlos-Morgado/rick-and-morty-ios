@@ -9,4 +9,5 @@ import Foundation
 
 enum NetworkEndpoint: String {
     case character
+    case episode
 }
