@@ -54,6 +54,9 @@
 		C4D135692A9612D50044E5EB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D135682A9612D50044E5EB /* Constant.swift */; };
 		C4D1356B2A96536C0044E5EB /* AllCharactersDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D1356A2A96536C0044E5EB /* AllCharactersDTO.swift */; };
 		C4D4420D2A8CC73300DDABD5 /* UIColor+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D4420C2A8CC73300DDABD5 /* UIColor+Settings.swift */; };
+		C4DF35652ABAE01D00DB7573 /* EpisodeInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF35642ABAE01D00DB7573 /* EpisodeInfoCollectionViewCell.swift */; };
+		C4DF35672ABAE62D00DB7573 /* EpisodeCharactersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF35662ABAE62D00DB7573 /* EpisodeCharactersCollectionViewCell.swift */; };
+		C4DF35692ABAE8E200DB7573 /* EpisodeTypeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF35682ABAE8E200DB7573 /* EpisodeTypeInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +111,9 @@
 		C4D135682A9612D50044E5EB /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		C4D1356A2A96536C0044E5EB /* AllCharactersDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCharactersDTO.swift; sourceTree = "<group>"; };
 		C4D4420C2A8CC73300DDABD5 /* UIColor+Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Settings.swift"; sourceTree = "<group>"; };
+		C4DF35642ABAE01D00DB7573 /* EpisodeInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		C4DF35662ABAE62D00DB7573 /* EpisodeCharactersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCharactersCollectionViewCell.swift; sourceTree = "<group>"; };
+		C4DF35682ABAE8E200DB7573 /* EpisodeTypeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTypeInfo.swift; sourceTree = "<group>"; };
 		D1966DEF0F09E70A25B9A2E3 /* Pods-rick-and-morty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rick-and-morty.debug.xcconfig"; path = "Target Support Files/Pods-rick-and-morty/Pods-rick-and-morty.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -357,6 +363,8 @@
 			isa = PBXGroup;
 			children = (
 				C45EA1522AB4A3AB006228D4 /* EpisodeDetailViewController.swift */,
+				C4DF35642ABAE01D00DB7573 /* EpisodeInfoCollectionViewCell.swift */,
+				C4DF35662ABAE62D00DB7573 /* EpisodeCharactersCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -373,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				C48E84182AB9A7DA0023981A /* EpisodeDetailPresenter.swift */,
+				C4DF35682ABAE8E200DB7573 /* EpisodeTypeInfo.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -665,6 +674,7 @@
 				C45EA1492AB45F8F006228D4 /* GetEpisodesInteractor.swift in Sources */,
 				C442A0D72A8FB608001FBF70 /* CharacterDataSource.swift in Sources */,
 				C408E0992A8A606400CEB1B3 /* LocationsViewController.swift in Sources */,
+				C4DF35672ABAE62D00DB7573 /* EpisodeCharactersCollectionViewCell.swift in Sources */,
 				C442A0D12A8F79B9001FBF70 /* CharactersRouter.swift in Sources */,
 				C48E84172AB9A7C70023981A /* EpisodeDetailRouter.swift in Sources */,
 				C46826E62A9367C60031167F /* CharacterOriginDTO.swift in Sources */,
@@ -689,10 +699,12 @@
 				C4C0E3DB2A73CE480044BDE1 /* SplashViewController.swift in Sources */,
 				C4D135692A9612D50044E5EB /* Constant.swift in Sources */,
 				C408E0912A8A5C9800CEB1B3 /* TabBarViewController.swift in Sources */,
+				C4DF35692ABAE8E200DB7573 /* EpisodeTypeInfo.swift in Sources */,
 				C408E08F2A8A3B7400CEB1B3 /* NetworkError.swift in Sources */,
 				C46826E42A9366340031167F /* CharacterGenderDTO.swift in Sources */,
 				C46826EB2A93B61A0031167F /* NetworkURL.swift in Sources */,
 				C425AECC2AB5D70800923746 /* EpisodeTableViewCell.swift in Sources */,
+				C4DF35652ABAE01D00DB7573 /* EpisodeInfoCollectionViewCell.swift in Sources */,
 				C4BD37492AA9C5AD00979D5D /* CharacterInfoCollectionViewCell.swift in Sources */,
 				C45EA14B2AB45FCA006228D4 /* EpisodeDTO.swift in Sources */,
 				C4D4420D2A8CC73300DDABD5 /* UIColor+Settings.swift in Sources */,

@@ -92,6 +92,6 @@ extension EpisodesViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+        presenter?.didSelectRowAt(indexPath)
     }
 }

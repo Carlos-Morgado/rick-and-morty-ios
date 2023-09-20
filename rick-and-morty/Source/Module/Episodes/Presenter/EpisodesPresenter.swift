@@ -40,7 +40,8 @@ extension DefaultEpisodesPresenter: EpisodesPresenter {
     }
     
     func didSelectRowAt(_ indexPath: IndexPath) {
-        
+        let episode = episodes[indexPath.row]
+        router.navigateToEpisodeDetail(episode)
     }
 }
 
