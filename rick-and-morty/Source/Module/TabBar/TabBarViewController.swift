@@ -23,7 +23,7 @@ final class TabBarViewController: UITabBarController {
         charactersViewControllerNavigation.tabBarItem = UITabBarItem(title: ("characters_screen_navigation_title".localized), image: UIImage(systemName: "person"), tag: 1)
         let episodesViewControllerNavigation = UINavigationController(rootViewController: DefaultEpisodesRouter.create())
         episodesViewControllerNavigation.tabBarItem = UITabBarItem(title: ("episodes_screen_navigation_title".localized), image: UIImage(systemName: "tv"), tag: 2)
-        let locationsViewControllerNavigation = UINavigationController(rootViewController: LocationsViewController())
+        let locationsViewControllerNavigation = UINavigationController(rootViewController: DefaultLocationsRouter.create())
         locationsViewControllerNavigation.tabBarItem = UITabBarItem(title: ("locations_screen_navigation_title".localized), image: UIImage(systemName: "globe"), tag: 3)
         
         
