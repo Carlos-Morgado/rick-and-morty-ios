@@ -9,7 +9,6 @@ import UIKit
 
 protocol CharacterDetailView: AnyObject {
     
-    
 }
 
 final class CharacterDetailViewController: UIViewController {

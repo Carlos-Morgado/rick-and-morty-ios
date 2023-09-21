@@ -37,6 +37,11 @@
 
 "episodes_screen_navigation_title" = "Episodes";
 
+// MARK: - EPISODE DETAIL SCREEN
+"episode_name_type_info" = "Episode Name";
+"episode_airDate_type_info" = "Air Date";
+"episode_episodeCode_type_info" = "Episode Code";
+
 
 // MARK: - LOCATIONS SCREEN
 

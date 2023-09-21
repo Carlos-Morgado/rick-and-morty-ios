@@ -10,7 +10,7 @@ import UIKit
 
 protocol EpisodesRouter {
     var viewController: UIViewController? { get set }
-    
+    func navigateToEpisodeDetail(_ episode: EpisodeDTO)
 }
 
 final class DefaultEpisodesRouter {
@@ -34,6 +34,9 @@ final class DefaultEpisodesRouter {
 // MARK: - EXTENSIONS
 
 extension DefaultEpisodesRouter: EpisodesRouter {
-
+    func navigateToEpisodeDetail(_ episode: EpisodeDTO) {
+        let episodeDetailModule = DefaultEpisodeDetailRouter.create(episode: episode)
+        viewController?.navigationController?.pushViewController(episodeDetailModule, animated: true)
+    }
     
 }

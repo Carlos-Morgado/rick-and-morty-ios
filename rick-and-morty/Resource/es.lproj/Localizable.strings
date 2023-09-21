@@ -38,6 +38,11 @@
 
 "episodes_screen_navigation_title" = "Episodios";
 
+// MARK: - EPISODE DETAIL SCREEN
+
+"episode_name_type_info" = "Nombre del episodio";
+"episode_airDate_type_info" = "Fecha de lanzamiento";
+"episode_episodeCode_type_info" = "Código del episodio";
 
 // MARK: - LOCATIONS SCREEN
 

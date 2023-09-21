@@ -11,6 +11,7 @@ import Kingfisher
 final class CharacterTableViewCell: UITableViewCell {
     private lazy var cardView: UIView = {
         let view = UIView(frame: .zero)
+        view.clipsToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .mainBackgroundColor2
         view.layer.cornerRadius = 10
