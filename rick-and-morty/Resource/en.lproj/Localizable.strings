@@ -46,3 +46,4 @@
 // MARK: - LOCATIONS SCREEN
 
 "locations_screen_navigation_title" = "Locations";
+"location_type_label" = "Type:";
