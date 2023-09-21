@@ -46,6 +46,12 @@
 		C4C0E3CC2A73C0F10044BDE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C0E3CA2A73C0F10044BDE1 /* LaunchScreen.storyboard */; };
 		C4C0E3DB2A73CE480044BDE1 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C0E3D92A73CE480044BDE1 /* SplashViewController.swift */; };
 		C4C0E3DC2A73CE480044BDE1 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4C0E3DA2A73CE480044BDE1 /* SplashViewController.xib */; };
+		C4C1D53B2ABC32AA001ABD81 /* LocationsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C1D53A2ABC32AA001ABD81 /* LocationsRouter.swift */; };
+		C4C1D53D2ABC32BE001ABD81 /* LocationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C1D53C2ABC32BE001ABD81 /* LocationsPresenter.swift */; };
+		C4C1D53F2ABC32DB001ABD81 /* GetLocationsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C1D53E2ABC32DB001ABD81 /* GetLocationsInteractor.swift */; };
+		C4C1D5412ABC3303001ABD81 /* LocationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C1D5402ABC3303001ABD81 /* LocationsDataSource.swift */; };
+		C4C1D5432ABC331B001ABD81 /* AllLocationsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C1D5422ABC331B001ABD81 /* AllLocationsDTO.swift */; };
+		C4C1D5452ABC332B001ABD81 /* LocationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C1D5442ABC332B001ABD81 /* LocationDTO.swift */; };
 		C4C66BE92AA8725E00407E0D /* CharacterDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C66BE82AA8725E00407E0D /* CharacterDetailRouter.swift */; };
 		C4C66BEB2AA8729300407E0D /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C66BEA2AA8729300407E0D /* CharacterDetailViewController.swift */; };
 		C4C66BED2AA872B500407E0D /* CharacterDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C66BEC2AA872B500407E0D /* CharacterDetailPresenter.swift */; };
@@ -103,6 +109,12 @@
 		C4C0E3CD2A73C0F10044BDE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4C0E3D92A73CE480044BDE1 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		C4C0E3DA2A73CE480044BDE1 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		C4C1D53A2ABC32AA001ABD81 /* LocationsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsRouter.swift; sourceTree = "<group>"; };
+		C4C1D53C2ABC32BE001ABD81 /* LocationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsPresenter.swift; sourceTree = "<group>"; };
+		C4C1D53E2ABC32DB001ABD81 /* GetLocationsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocationsInteractor.swift; sourceTree = "<group>"; };
+		C4C1D5402ABC3303001ABD81 /* LocationsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsDataSource.swift; sourceTree = "<group>"; };
+		C4C1D5422ABC331B001ABD81 /* AllLocationsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLocationsDTO.swift; sourceTree = "<group>"; };
+		C4C1D5442ABC332B001ABD81 /* LocationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDTO.swift; sourceTree = "<group>"; };
 		C4C66BE82AA8725E00407E0D /* CharacterDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailRouter.swift; sourceTree = "<group>"; };
 		C4C66BEA2AA8729300407E0D /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		C4C66BEC2AA872B500407E0D /* CharacterDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailPresenter.swift; sourceTree = "<group>"; };
@@ -181,7 +193,9 @@
 		C408E0972A8A604D00CEB1B3 /* Locations */ = {
 			isa = PBXGroup;
 			children = (
+				C4C1D5372ABC3251001ABD81 /* Router */,
 				C408E09D2A8A6F8000CEB1B3 /* View */,
+				C4C1D5382ABC3257001ABD81 /* Presenter */,
 			);
 			path = Locations;
 			sourceTree = "<group>";
@@ -241,6 +255,7 @@
 			children = (
 				C442A0C82A8F6BC0001FBF70 /* GetCharacters */,
 				C45EA13F2AB45E34006228D4 /* GetEpisodes */,
+				C4C1D5362ABC323B001ABD81 /* Get Locations */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -266,6 +281,7 @@
 			children = (
 				C4D135642A960F730044E5EB /* Character */,
 				C45EA1412AB45E4F006228D4 /* Episodes */,
+				C4C1D5332ABC321E001ABD81 /* Locations */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -462,8 +478,8 @@
 				C408E0872A8A1E8C00CEB1B3 /* Characters */,
 				C4C66BE42AA86CDF00407E0D /* Character Detail */,
 				C408E0942A8A600E00CEB1B3 /* Episodes */,
-				C408E0972A8A604D00CEB1B3 /* Locations */,
 				C45EA1502AB4A36D006228D4 /* EpisodeDetail */,
+				C408E0972A8A604D00CEB1B3 /* Locations */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -475,6 +491,64 @@
 				C4C0E3DA2A73CE480044BDE1 /* SplashViewController.xib */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		C4C1D5332ABC321E001ABD81 /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				C4C1D5352ABC322B001ABD81 /* Data Source */,
+				C4C1D5342ABC3227001ABD81 /* DTO */,
+			);
+			path = Locations;
+			sourceTree = "<group>";
+		};
+		C4C1D5342ABC3227001ABD81 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				C4C1D5422ABC331B001ABD81 /* AllLocationsDTO.swift */,
+				C4C1D5442ABC332B001ABD81 /* LocationDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		C4C1D5352ABC322B001ABD81 /* Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				C4C1D5402ABC3303001ABD81 /* LocationsDataSource.swift */,
+			);
+			path = "Data Source";
+			sourceTree = "<group>";
+		};
+		C4C1D5362ABC323B001ABD81 /* Get Locations */ = {
+			isa = PBXGroup;
+			children = (
+				C4C1D5392ABC3288001ABD81 /* Interactor */,
+			);
+			path = "Get Locations";
+			sourceTree = "<group>";
+		};
+		C4C1D5372ABC3251001ABD81 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				C4C1D53A2ABC32AA001ABD81 /* LocationsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		C4C1D5382ABC3257001ABD81 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				C4C1D53C2ABC32BE001ABD81 /* LocationsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		C4C1D5392ABC3288001ABD81 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				C4C1D53E2ABC32DB001ABD81 /* GetLocationsInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		C4C66BE42AA86CDF00407E0D /* Character Detail */ = {
@@ -685,25 +759,31 @@
 				C45EA14D2AB46151006228D4 /* AllEpisodesDTO.swift in Sources */,
 				C442A0CD2A8F7889001FBF70 /* GetCharactersInteractor.swift in Sources */,
 				C47764B02AB21F8100196763 /* CharacterTypeInfo.swift in Sources */,
+				C4C1D53B2ABC32AA001ABD81 /* LocationsRouter.swift in Sources */,
 				C4D1356B2A96536C0044E5EB /* AllCharactersDTO.swift in Sources */,
 				C48E84192AB9A7DA0023981A /* EpisodeDetailPresenter.swift in Sources */,
 				C45EA1452AB45F59006228D4 /* EpisodesRouter.swift in Sources */,
 				C4D135662A9612820044E5EB /* NetworkEndpoint.swift in Sources */,
 				C442A0D32A8F79C6001FBF70 /* CharactersPresenter.swift in Sources */,
 				C46826E82A9368C90031167F /* CharacterLocationDTO.swift in Sources */,
+				C4C1D5412ABC3303001ABD81 /* LocationsDataSource.swift in Sources */,
 				C4C0E3C02A73C0F10044BDE1 /* AppDelegate.swift in Sources */,
+				C4C1D53F2ABC32DB001ABD81 /* GetLocationsInteractor.swift in Sources */,
 				C4C66BE92AA8725E00407E0D /* CharacterDetailRouter.swift in Sources */,
+				C4C1D5452ABC332B001ABD81 /* LocationDTO.swift in Sources */,
 				C442A0C42A8F63A3001FBF70 /* String+Localized.swift in Sources */,
 				C45EA14F2AB46185006228D4 /* EpisodesDataSource.swift in Sources */,
 				C45EA1472AB45F76006228D4 /* EpisodesPresenter.swift in Sources */,
 				C4C0E3DB2A73CE480044BDE1 /* SplashViewController.swift in Sources */,
 				C4D135692A9612D50044E5EB /* Constant.swift in Sources */,
 				C408E0912A8A5C9800CEB1B3 /* TabBarViewController.swift in Sources */,
+				C4C1D53D2ABC32BE001ABD81 /* LocationsPresenter.swift in Sources */,
 				C4DF35692ABAE8E200DB7573 /* EpisodeTypeInfo.swift in Sources */,
 				C408E08F2A8A3B7400CEB1B3 /* NetworkError.swift in Sources */,
 				C46826E42A9366340031167F /* CharacterGenderDTO.swift in Sources */,
 				C46826EB2A93B61A0031167F /* NetworkURL.swift in Sources */,
 				C425AECC2AB5D70800923746 /* EpisodeTableViewCell.swift in Sources */,
+				C4C1D5432ABC331B001ABD81 /* AllLocationsDTO.swift in Sources */,
 				C4DF35652ABAE01D00DB7573 /* EpisodeInfoCollectionViewCell.swift in Sources */,
 				C4BD37492AA9C5AD00979D5D /* CharacterInfoCollectionViewCell.swift in Sources */,
 				C45EA14B2AB45FCA006228D4 /* EpisodeDTO.swift in Sources */,
