@@ -14,7 +14,6 @@ final class EpisodeCharactersCollectionViewCell: UICollectionViewCell {
     private let characterImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        //imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .gray
         return imageView
@@ -22,7 +21,6 @@ final class EpisodeCharactersCollectionViewCell: UICollectionViewCell {
     
     private lazy var characterNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Name"
         label.font = .systemFont(ofSize: 18, weight: .black)
         label.numberOfLines = 0
         label.textColor = .mainGreen1
@@ -32,7 +30,6 @@ final class EpisodeCharactersCollectionViewCell: UICollectionViewCell {
     
     private lazy var characterStatusLabel: UILabel = {
         let label = UILabel()
-        label.text = "Status"
         label.font = .systemFont(ofSize: 14, weight: .regular)
         label.numberOfLines = 0
         label.textColor = .white
