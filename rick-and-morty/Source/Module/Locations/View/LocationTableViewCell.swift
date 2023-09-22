@@ -60,7 +60,7 @@ final class LocationTableViewCell: UITableViewCell {
     
     func setCellLabelTexts(setLocationName name: String, setLocationType type: String) {
         locationNameLabel.text = name
-        var locationType = "location_type_label".localized
+        let locationType = "location_type_label".localized
         locationTypeLabel.text = "\(locationType) \(type)"
     }
 }

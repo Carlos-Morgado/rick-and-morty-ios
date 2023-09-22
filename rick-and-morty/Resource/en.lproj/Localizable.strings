@@ -47,3 +47,9 @@
 
 "locations_screen_navigation_title" = "Locations";
 "location_type_label" = "Type:";
+
+// MARK: - LOCATION DETAIL SCREEN
+
+"location_name_type_info" = "Name";
+"location_type_type_info" = "Type";
+"location_dimension_type_info" = "Dimension";

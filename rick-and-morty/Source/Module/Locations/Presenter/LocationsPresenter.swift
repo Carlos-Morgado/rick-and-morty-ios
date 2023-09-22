@@ -38,8 +38,8 @@ extension DefaultLocationsPresenter: LocationsPresenter {
     }
     
     func didSelectRowAt(_ indexPath: IndexPath) {
-//        let location = locations[indexPath.row]
-//        router.navigateToLocationDetail(location)
+        let location = locations[indexPath.row]
+        router.navigateToLocationDetail(location)
     }
 }
 
