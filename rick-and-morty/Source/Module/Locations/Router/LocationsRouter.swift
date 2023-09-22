@@ -10,7 +10,7 @@ import UIKit
 
 protocol LocationsRouter {
     var viewController: UIViewController? { get set }
-    // func navigateToLocationDetail(_ location: LocationDTO)
+    func navigateToLocationDetail(_ location: LocationDTO)
 }
 
 final class DefaultLocationsRouter {
@@ -34,8 +34,8 @@ final class DefaultLocationsRouter {
 // MARK: - EXTENSIONS
 
 extension DefaultLocationsRouter: LocationsRouter {
-//    func navigateToEpisodeDetail(_ episode: EpisodeDTO) {
-//        let episodeDetailModule = DefaultEpisodeDetailRouter.create(episode: episode)
-//        viewController?.navigationController?.pushViewController(episodeDetailModule, animated: true)
-//    }
+    func navigateToLocationDetail(_ location: LocationDTO) {
+        let locationDetailModule = DefaultLocationDetailRouter.create(location: location)
+        viewController?.navigationController?.pushViewController(locationDetailModule, animated: true)
+    }
 }
