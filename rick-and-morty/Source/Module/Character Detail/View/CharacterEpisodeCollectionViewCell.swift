@@ -16,7 +16,6 @@ final class CharacterEpisodeCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.textColor = .mainGreen1
-        label.text = "Season"
         return label
     }()
     
@@ -25,7 +24,6 @@ final class CharacterEpisodeCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .italicSystemFont(ofSize: 16)
         label.textColor = .white
-        label.text = "Episode name"
         return label
     }()
     
@@ -34,7 +32,6 @@ final class CharacterEpisodeCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 14, weight: .light)
         label.textColor = .white
-        label.text = "Air date"
         return label
     }()
     
@@ -49,6 +46,12 @@ final class CharacterEpisodeCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    func setValues(episodeCode: String, name: String, airDate: String) {
+        seasonLabel.text = episodeCode
+        episodeNameLabel.text = name
+        airDateLabel.text = airDate
     }
 }
 

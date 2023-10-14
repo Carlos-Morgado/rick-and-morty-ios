@@ -46,7 +46,6 @@ extension DefaultEpisodesPresenter: EpisodesPresenter {
 }
 
 extension DefaultEpisodesPresenter: GetEpisodesInteractorOutput {
-    
     func manageGetEpisodesSuccess(episodes: [EpisodeDTO]) {
         self.episodes = episodes
         viewController?.showEpisodesList()

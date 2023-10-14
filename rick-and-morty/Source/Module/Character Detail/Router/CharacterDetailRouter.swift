@@ -18,10 +18,12 @@ final class DefaultCharacterDetailRouter {
     static func create(character: CharacterDTO) -> UIViewController {
         var router: CharacterDetailRouter = DefaultCharacterDetailRouter()
         let viewController = CharacterDetailViewController()
-        let presenter = DefaultCharacterDetailPresenter(router: router, viewController: viewController, character: character)
+        var getEpisodeDetailInteractor: GetEpisodeDetailInteractorInput = DefaultGetEpisodeDetailInteractor()
+        let presenter = DefaultCharacterDetailPresenter(router: router, viewController: viewController, character: character, getEpisodeDetailInteractor: getEpisodeDetailInteractor)
         
         viewController.presenter = presenter
         router.viewController = viewController
+        getEpisodeDetailInteractor.presenter = presenter
         
         return viewController
     }
