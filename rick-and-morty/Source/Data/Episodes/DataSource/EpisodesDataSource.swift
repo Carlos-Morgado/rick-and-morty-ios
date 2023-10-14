@@ -7,9 +7,14 @@
 
 import Foundation
 
+enum EpisodeDataSourceError: Error {
+    case invalidUrl
+}
+
 protocol EpisodesDataSource {
     // Interactor -> DataSource
     func getEpisodes(successCompletionDataSource: @escaping ([EpisodeDTO]) -> Void, errorCompletionDataSource: @escaping (Error) -> Void)
+    func getEpisodeDetail(urlString: String, successCompletionDataSource: @escaping (EpisodeDTO) -> Void, errorCompletionDataSource: @escaping (Error) -> Void)
 }
 
 struct DefaultEpisodesDataSource {
@@ -21,7 +26,6 @@ struct DefaultEpisodesDataSource {
 }
 
 extension DefaultEpisodesDataSource: EpisodesDataSource {
-    
     func getEpisodes(successCompletionDataSource: @escaping ([EpisodeDTO]) -> Void, errorCompletionDataSource: @escaping (Error) -> Void) {
         guard let episodesURL = NetworkURL(baseUrl: Constant.baseUrl, endpoint: .episode).url else {
             fatalError("Invalid URL")
@@ -34,5 +38,20 @@ extension DefaultEpisodesDataSource: EpisodesDataSource {
             errorCompletionDataSource(error)
         }
         
+    }
+    
+    func getEpisodeDetail(urlString: String, successCompletionDataSource: @escaping (EpisodeDTO) -> Void, errorCompletionDataSource: @escaping (Error) -> Void) {
+        guard let episodeDetailURL = URL(string: urlString) else {
+            errorCompletionDataSource(EpisodeDataSourceError.invalidUrl)
+            return
+        }
+        
+        networkManager.request(url: episodeDetailURL, httpMethod: .get) { result in
+            let dto = result as EpisodeDTO
+            successCompletionDataSource(dto)
+        } errorCompletionNetworkManager: { error in
+            errorCompletionDataSource(error)
+        }
+
     }
 }

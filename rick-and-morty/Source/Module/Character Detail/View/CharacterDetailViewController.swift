@@ -8,14 +8,15 @@
 import UIKit
 
 protocol CharacterDetailView: AnyObject {
-    
+    // Presenter -> View
+    func reloadData()
 }
 
 final class CharacterDetailViewController: UIViewController {
     
     var presenter: CharacterDetailPresenter?
     
-    enum SectionType: CaseIterable {
+    enum SectionType: Int, CaseIterable {
         case characterPhotoSection
         case characterInformationSection
         case characterEpisodesSection
@@ -40,7 +41,7 @@ final class CharacterDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
-        
+        presenter?.viewDidLoad()
     }
 }
 
@@ -48,7 +49,9 @@ final class CharacterDetailViewController: UIViewController {
 // MARK: - EXTENSIONS
 
 extension CharacterDetailViewController: CharacterDetailView {
-    
+    func reloadData() {
+        characterCollectionView.reloadData()
+    }
 }
 
 private extension CharacterDetailViewController {
@@ -134,7 +137,7 @@ extension CharacterDetailViewController: UICollectionViewDataSource {
         case .characterInformationSection:
             return CharacterTypeInfo.allCases.count
         case .characterEpisodesSection:
-            return 8
+            return presenter?.episodes.count ?? 0
         }
     }
     
@@ -161,6 +164,8 @@ extension CharacterDetailViewController: UICollectionViewDataSource {
             guard let episodeCell = characterCollectionView.dequeueReusableCell(withReuseIdentifier: CharacterEpisodeCollectionViewCell.identifier, for: indexPath) as? CharacterEpisodeCollectionViewCell else {
                 return UICollectionViewCell()
             }
+            let episode = presenter.episodes[indexPath.row]
+            episodeCell.setValues(episodeCode: episode.episode, name: episode.name, airDate: episode.airDate)
             return episodeCell
         }
     }

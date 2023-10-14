@@ -37,6 +37,7 @@
 		C46826E62A9367C60031167F /* CharacterOriginDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46826E52A9367C60031167F /* CharacterOriginDTO.swift */; };
 		C46826E82A9368C90031167F /* CharacterLocationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46826E72A9368C90031167F /* CharacterLocationDTO.swift */; };
 		C46826EB2A93B61A0031167F /* NetworkURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46826EA2A93B61A0031167F /* NetworkURL.swift */; };
+		C46D3BA62AD96A9B00F0F6B9 /* GetEpisodeDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D3BA52AD96A9B00F0F6B9 /* GetEpisodeDetailInteractor.swift */; };
 		C47764B02AB21F8100196763 /* CharacterTypeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47764AF2AB21F8100196763 /* CharacterTypeInfo.swift */; };
 		C48E84172AB9A7C70023981A /* EpisodeDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E84162AB9A7C70023981A /* EpisodeDetailRouter.swift */; };
 		C48E84192AB9A7DA0023981A /* EpisodeDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E84182AB9A7DA0023981A /* EpisodeDetailPresenter.swift */; };
@@ -105,6 +106,7 @@
 		C46826E52A9367C60031167F /* CharacterOriginDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterOriginDTO.swift; sourceTree = "<group>"; };
 		C46826E72A9368C90031167F /* CharacterLocationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterLocationDTO.swift; sourceTree = "<group>"; };
 		C46826EA2A93B61A0031167F /* NetworkURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkURL.swift; sourceTree = "<group>"; };
+		C46D3BA52AD96A9B00F0F6B9 /* GetEpisodeDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEpisodeDetailInteractor.swift; sourceTree = "<group>"; };
 		C47764AF2AB21F8100196763 /* CharacterTypeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTypeInfo.swift; sourceTree = "<group>"; };
 		C48E84162AB9A7C70023981A /* EpisodeDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailRouter.swift; sourceTree = "<group>"; };
 		C48E84182AB9A7DA0023981A /* EpisodeDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailPresenter.swift; sourceTree = "<group>"; };
@@ -270,7 +272,8 @@
 			children = (
 				C442A0C82A8F6BC0001FBF70 /* GetCharacters */,
 				C45EA13F2AB45E34006228D4 /* GetEpisodes */,
-				C4C1D5362ABC323B001ABD81 /* Get Locations */,
+				C46D3BA32AD96A7400F0F6B9 /* GetEpisodeDetail */,
+				C4C1D5362ABC323B001ABD81 /* GetLocations */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -398,6 +401,22 @@
 				C4DF35662ABAE62D00DB7573 /* EpisodeCharactersCollectionViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C46D3BA32AD96A7400F0F6B9 /* GetEpisodeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C46D3BA42AD96A8400F0F6B9 /* Interactor */,
+			);
+			path = GetEpisodeDetail;
+			sourceTree = "<group>";
+		};
+		C46D3BA42AD96A8400F0F6B9 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				C46D3BA52AD96A9B00F0F6B9 /* GetEpisodeDetailInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		C48E84142AB9A7980023981A /* Router */ = {
@@ -535,12 +554,12 @@
 			path = "Data Source";
 			sourceTree = "<group>";
 		};
-		C4C1D5362ABC323B001ABD81 /* Get Locations */ = {
+		C4C1D5362ABC323B001ABD81 /* GetLocations */ = {
 			isa = PBXGroup;
 			children = (
 				C4C1D5392ABC3288001ABD81 /* Interactor */,
 			);
-			path = "Get Locations";
+			path = GetLocations;
 			sourceTree = "<group>";
 		};
 		C4C1D5372ABC3251001ABD81 /* Router */ = {
@@ -812,6 +831,7 @@
 				C408E08D2A8A2D9900CEB1B3 /* NetworkHTTPMethod.swift in Sources */,
 				C45EA14D2AB46151006228D4 /* AllEpisodesDTO.swift in Sources */,
 				C442A0CD2A8F7889001FBF70 /* GetCharactersInteractor.swift in Sources */,
+				C46D3BA62AD96A9B00F0F6B9 /* GetEpisodeDetailInteractor.swift in Sources */,
 				C4C1D5472ABC4C59001ABD81 /* LocationTableViewCell.swift in Sources */,
 				C47764B02AB21F8100196763 /* CharacterTypeInfo.swift in Sources */,
 				C4C1D53B2ABC32AA001ABD81 /* LocationsRouter.swift in Sources */,

@@ -9,7 +9,9 @@ import Foundation
 
 protocol CharacterDetailPresenter {
     var character: CharacterDTO { get }
+    var episodes: [EpisodeDTO] { get }
     func getInfoCellValue(infoType: CharacterTypeInfo) -> String
+    func viewDidLoad()
 }
 
 final class DefaultCharacterDetailPresenter {
@@ -31,18 +33,22 @@ final class DefaultCharacterDetailPresenter {
     
     private let router: CharacterDetailRouter
     private weak var viewController: CharacterDetailView?
-    var character: CharacterDTO
+    let character: CharacterDTO
+    let getEpisodeDetailInteractor: GetEpisodeDetailInteractorInput
+    var episodes: [EpisodeDTO] = []
     
-    init(router: CharacterDetailRouter, viewController: CharacterDetailView, character: CharacterDTO) {
+    init(router: CharacterDetailRouter, viewController: CharacterDetailView, character: CharacterDTO, getEpisodeDetailInteractor: GetEpisodeDetailInteractorInput) {
         self.router = router
         self.viewController = viewController
         self.character = character
+        self.getEpisodeDetailInteractor = getEpisodeDetailInteractor
     }
 }
 
 // MARK: - EXTENSIONS
 
 extension DefaultCharacterDetailPresenter: CharacterDetailPresenter {
+    
     func getInfoCellValue(infoType: CharacterTypeInfo) -> String {
         var value: String = ""
         switch infoType {
@@ -67,5 +73,23 @@ extension DefaultCharacterDetailPresenter: CharacterDetailPresenter {
         }
         
         return value
+    }
+    
+    func viewDidLoad() {
+        for episode in character.episode {
+            getEpisodeDetailInteractor.getEpisodeDetail(urlString: episode)
+        }
+        
+    }
+}
+
+extension DefaultCharacterDetailPresenter: GetEpisodeDetailInteractorOutput {
+    func manageGetEpisodeDetailSuccess(episodeDetail: EpisodeDTO) {
+        episodes.append(episodeDetail)
+        viewController?.reloadData()
+    }
+    
+    func manageGetEpisodeDetailError() {
+        // TODO: Manage error
     }
 }
