@@ -12,7 +12,7 @@ protocol CharactersPresenter {
     var characters: [CharacterDTO] { get }
     func viewDidLoad()
     func didSelectRowAt(_ indexPath: IndexPath)
-    
+    func getCharacters()
 }
 
 final class DefaultCharactersPresenter {
@@ -22,6 +22,7 @@ final class DefaultCharactersPresenter {
     private weak var viewController: CharactersView?
     private let router: CharactersRouter
     private let getCharactersInteractor: GetCharactersInteractorInput
+    private var isGettingCharacters: Bool = false
     
     init(router: CharactersRouter, viewController: CharactersView, getCharactersInteractor: GetCharactersInteractorInput) {
         self.router = router
@@ -36,22 +37,31 @@ final class DefaultCharactersPresenter {
 extension DefaultCharactersPresenter: CharactersPresenter {
     
     func viewDidLoad() {
-        getCharactersInteractor.getCharacters()
+        getCharacters()
     }
     
     func didSelectRowAt(_ indexPath: IndexPath) {
         let character = characters[indexPath.row]
         router.navigateToCharacterDetail(character)
     }
+    
+    func getCharacters() {
+        if !isGettingCharacters {
+            isGettingCharacters = true
+            getCharactersInteractor.getCharacters()
+        }
+    }
 }
 
 extension DefaultCharactersPresenter: GetCharactersInteractorOutput {
     func manageGetCharactersSuccess(characters: [CharacterDTO]) {
-        self.characters = characters
+        self.characters.append(contentsOf: characters)
         viewController?.showCharactersList()
+        isGettingCharacters = false
     }
     
     func manageGetCharactersError() {
         router.showNetworkErrorAlert()
+        isGettingCharacters = false
     }
 }

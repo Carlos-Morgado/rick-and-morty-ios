@@ -91,5 +91,29 @@ extension CharactersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter?.didSelectRowAt(indexPath) 
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // Obtén la altura del contenido de la tabla
+        let contenidoTablaAltura = charactersTableView.contentSize.height
+        
+        // Obtén la posición actual de desplazamiento
+        let posicionDesplazamiento = charactersTableView.contentOffset.y
+        
+        // Obtén la altura de la vista visible
+        let vistaAltura = charactersTableView.frame.size.height
+        
+        // Determina cuántos puntos faltan para llegar al final
+        let puntosRestantes = contenidoTablaAltura - (posicionDesplazamiento + vistaAltura)
+        
+        // Define una constante para determinar cuántos puntos se consideran "cerca del final"
+        let puntosCercaDelFinal: CGFloat = 100.0 // Ajusta este valor según tus necesidades
+        
+        if puntosRestantes < puntosCercaDelFinal {
+            // Estás cerca del final de la tabla
+            // Puedes cargar más datos o realizar la acción que desees aquí
+            print("Estamos en la parte final del scroll")
+            presenter?.getCharacters()
+        }
+    }
 }
 
