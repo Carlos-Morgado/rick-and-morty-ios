@@ -16,7 +16,14 @@ protocol GetCharactersInteractorOutput: AnyObject {
 protocol GetCharactersInteractorInput {
     // Presenter -> Interactor
     var presenter: GetCharactersInteractorOutput? { get set } // Reading and writting variables
-    func getCharacters()
+    func getCharacters(isNewSearch: Bool, name: String?)
+}
+
+extension GetCharactersInteractorInput {
+    
+    func getCharacters(isNewSearch: Bool = false, name: String? = nil) {
+        getCharacters(isNewSearch: isNewSearch, name: name)
+    }
 }
 
 final class DefaultGetCharactersInteractor {
@@ -28,13 +35,12 @@ final class DefaultGetCharactersInteractor {
 }
 
 
-
 // MARK: - EXTENSIONS
 
 extension DefaultGetCharactersInteractor: GetCharactersInteractorInput {
-    func getCharacters() {
-        characterDataSource.getCharacters(successCompletionDataSource: { [weak self] characters in // DataSource successCompletion variable name
-           self?.presenter?.manageGetCharactersSuccess(characters: characters)
+    func getCharacters(isNewSearch: Bool = false, name: String? = nil) {
+        characterDataSource.getCharacters(isNewSearch: isNewSearch, name: name, successCompletionDataSource: { [weak self] characters in // DataSource successCompletion variable name
+            self?.presenter?.manageGetCharactersSuccess(characters: characters)
         }, errorCompletionDataSource: { [weak self] _ in
             self?.presenter?.manageGetCharactersError()
         })

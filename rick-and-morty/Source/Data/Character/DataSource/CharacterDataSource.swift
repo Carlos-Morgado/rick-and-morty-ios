@@ -9,7 +9,15 @@ import Foundation
 
 protocol CharacterDataSource {
     // Interactor -> DataSource
-    func getCharacters(successCompletionDataSource: @escaping ([CharacterDTO]) -> Void, errorCompletionDataSource: @escaping (Error) -> Void)
+    func getCharacters(isNewSearch: Bool, name: String?, successCompletionDataSource: @escaping ([CharacterDTO]) -> Void, errorCompletionDataSource: @escaping (Error) -> Void)
+}
+
+extension CharacterDataSource {
+    
+    func getCharacters(isNewSearch: Bool = false, name: String? = nil, successCompletionDataSource: @escaping ([CharacterDTO]) -> Void, errorCompletionDataSource: @escaping (Error) -> Void) {
+        getCharacters(isNewSearch: isNewSearch, name: name, successCompletionDataSource: successCompletionDataSource, errorCompletionDataSource: errorCompletionDataSource)
+    }
+    
 }
 
 final class DefaultCharacterDataSource {
@@ -22,19 +30,28 @@ final class DefaultCharacterDataSource {
 }
 
 extension DefaultCharacterDataSource: CharacterDataSource {
-    
-    func getCharacters(successCompletionDataSource: @escaping ([CharacterDTO]) -> Void, errorCompletionDataSource: @escaping (Error) -> Void) {
+    func getCharacters(isNewSearch: Bool = false, name: String? = nil, successCompletionDataSource: @escaping ([CharacterDTO]) -> Void, errorCompletionDataSource: @escaping (Error) -> Void) {
+        if isNewSearch {
+            paginationInfo = nil
+        }
         var url: URL?
-        if let paginationInfo {
-            // Tenemos información de la paginación
-            guard let nextUrl = paginationInfo.next else {
-                // No existe siguiente página, porque ya es la última, ya no tenemos que pedir más info
-                return
-            }
-            url = URL(string: nextUrl)
+        var parameters: [NetworkParameter] = []
+        if let name, !name.isEmpty {
+            paginationInfo = nil
+            parameters.append(NetworkParameter(query: "name", value: name))
+            url = NetworkURL(baseUrl: Constant.baseUrl, endpoint: .character, parameters: parameters).url
         } else {
-           // Es la primera petición , no tenemos info de la paginación,
-            url = NetworkURL(baseUrl: Constant.baseUrl, endpoint: .character).url
+            if let paginationInfo {
+                // Tenemos información de la paginación
+                guard let nextUrl = paginationInfo.next else {
+                    // No existe siguiente página, porque ya es la última, ya no tenemos que pedir más info
+                    return
+                }
+                url = URL(string: nextUrl)
+            } else {
+                paginationInfo = nil
+                url = NetworkURL(baseUrl: Constant.baseUrl, endpoint: .character).url
+            }
         }
         
         guard let url else {

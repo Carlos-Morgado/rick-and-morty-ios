@@ -13,6 +13,7 @@ protocol CharactersPresenter {
     func viewDidLoad()
     func didSelectRowAt(_ indexPath: IndexPath)
     func getCharacters()
+    func searchBarSearchButtonClicked(searchText: String)
 }
 
 final class DefaultCharactersPresenter {
@@ -51,12 +52,18 @@ extension DefaultCharactersPresenter: CharactersPresenter {
             getCharactersInteractor.getCharacters()
         }
     }
+    
+    func searchBarSearchButtonClicked(searchText: String) {
+        characters = []
+        viewController?.reloadCharacters()
+        getCharactersInteractor.getCharacters(isNewSearch: true, name: searchText)
+    }
 }
 
 extension DefaultCharactersPresenter: GetCharactersInteractorOutput {
     func manageGetCharactersSuccess(characters: [CharacterDTO]) {
         self.characters.append(contentsOf: characters)
-        viewController?.showCharactersList()
+        viewController?.reloadCharacters()
         isGettingCharacters = false
     }
     

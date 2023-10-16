@@ -9,13 +9,34 @@ import UIKit
 
 protocol CharactersView: AnyObject {
     // Presenter -> View
-    func showCharactersList()
+    func reloadCharacters()
 }
 
 final class CharactersViewController: UIViewController {
     
     var presenter: CharactersPresenter?
 
+    private lazy var charactersSearchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "characters_searchbar_placeholder".localized
+        searchBar.delegate = self
+        searchBar.searchBarStyle = .minimal
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.enablesReturnKeyAutomatically = false
+        searchBar.barTintColor = .clear
+        searchBar.tintColor = .mainGreen1
+        searchBar.searchTextField.textColor = .white
+        if let textField = searchBar.value(forKey: "searchField") as? UITextField {
+            let placeholderColor = UIColor.mainBlue1
+            let placeholderText = "characters_searchbar_placeholder".localized
+            textField.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: [NSAttributedString.Key.foregroundColor: placeholderColor as Any])
+        }
+        if let magnifyingGlassImage = UIImage(named: "lupa") {
+            searchBar.setImage(magnifyingGlassImage, for: .search, state: .normal)
+        }
+        return searchBar
+    }()
+    
     private lazy var charactersTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -34,7 +55,7 @@ final class CharactersViewController: UIViewController {
 
 extension CharactersViewController: CharactersView {
     
-    func showCharactersList() {
+    func reloadCharacters() {
         charactersTableView.reloadData()
     }
 }
@@ -49,13 +70,20 @@ private extension CharactersViewController {
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         view.backgroundColor = .mainBackgroundColor1
+        view.addSubview(charactersSearchBar)
+        NSLayoutConstraint.activate([
+           charactersSearchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+           charactersSearchBar.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 10),
+           charactersSearchBar.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -10),
+           charactersSearchBar.heightAnchor.constraint(equalToConstant: 60)
+        ])
         view.addSubview(charactersTableView)
         configCharactersTableView()
         NSLayoutConstraint.activate([
-            charactersTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            charactersTableView.topAnchor.constraint(equalTo: charactersSearchBar.bottomAnchor, constant: 5),
             charactersTableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
             charactersTableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-            charactersTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            charactersTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
@@ -111,9 +139,17 @@ extension CharactersViewController: UITableViewDelegate {
         if puntosRestantes < puntosCercaDelFinal {
             // Estás cerca del final de la tabla
             // Puedes cargar más datos o realizar la acción que desees aquí
-            print("Estamos en la parte final del scroll")
             presenter?.getCharacters()
         }
     }
 }
 
+extension CharactersViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let searchText = searchBar.text {
+            // Aquí puedes realizar alguna acción con el término de búsqueda, como buscar en una base de datos o realizar alguna otra tarea relacionada.
+            presenter?.searchBarSearchButtonClicked(searchText: searchText)
+        }
+        searchBar.resignFirstResponder() // Oculta el teclado
+    }
+}

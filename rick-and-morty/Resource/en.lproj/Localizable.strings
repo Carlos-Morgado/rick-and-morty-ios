@@ -14,6 +14,7 @@
 "characters_network_error_alert_message" = "There was an error with the network";
 "characters_network_error_alert_button" = "Retry";
 "characters_table_view_refresh_control" = "Pull to refresh";
+"characters_searchbar_placeholder" = "Search character";
 
 // MARK: - CHARACTER DETAIL SCREEN
 
