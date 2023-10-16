@@ -15,6 +15,7 @@
 "characters_network_error_alert_message" = "Hubo un error con la red";
 "characters_network_error_alert_button" = "Reintentar";
 "characters_table_view_refresh_control" = "Pulsar para recargar";
+"characters_searchbar_placeholder" = "Buscar personaje";
 
 // MARK: - CHARACTER DETAIL SCREEN
 
