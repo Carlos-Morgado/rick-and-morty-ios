@@ -12,6 +12,7 @@ protocol CharactersPresenter {
     var characters: [CharacterDTO] { get }
     func viewDidLoad()
     func didSelectRowAt(_ indexPath: IndexPath)
+    func searchBarSearchButtonClicked(searchText: String)
     
 }
 
@@ -42,6 +43,10 @@ extension DefaultCharactersPresenter: CharactersPresenter {
     func didSelectRowAt(_ indexPath: IndexPath) {
         let character = characters[indexPath.row]
         router.navigateToCharacterDetail(character)
+    }
+    
+    func searchBarSearchButtonClicked(searchText: String) {
+        getCharactersInteractor.getCharacters(name: searchText)
     }
 }
 

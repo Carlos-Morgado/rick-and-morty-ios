@@ -9,7 +9,15 @@ import Foundation
 
 protocol CharacterDataSource {
     // Interactor -> DataSource
-    func getCharacters(successCompletionDataSource: @escaping ([CharacterDTO]) -> Void, errorCompletionDataSource: @escaping (Error) -> Void)
+    func getCharacters(name: String?, successCompletionDataSource: @escaping ([CharacterDTO]) -> Void, errorCompletionDataSource: @escaping (Error) -> Void)
+}
+
+extension CharacterDataSource {
+    
+    func getCharacters(name: String? = nil, successCompletionDataSource: @escaping ([CharacterDTO]) -> Void, errorCompletionDataSource: @escaping (Error) -> Void) {
+        getCharacters(name: name, successCompletionDataSource: successCompletionDataSource, errorCompletionDataSource: errorCompletionDataSource)
+    }
+    
 }
 
 struct DefaultCharacterDataSource {
@@ -22,8 +30,12 @@ struct DefaultCharacterDataSource {
 
 extension DefaultCharacterDataSource: CharacterDataSource {
     
-    func getCharacters(successCompletionDataSource: @escaping ([CharacterDTO]) -> Void, errorCompletionDataSource: @escaping (Error) -> Void) {
-        guard let charactersURL = NetworkURL(baseUrl: Constant.baseUrl, endpoint: .character).url else {
+    func getCharacters(name: String? = nil, successCompletionDataSource: @escaping ([CharacterDTO]) -> Void, errorCompletionDataSource: @escaping (Error) -> Void) {
+        var parameters: [NetworkParameter] = []
+        if let name, !name.isEmpty {
+            parameters.append(NetworkParameter(query: "name", value: name))
+        }
+        guard let charactersURL = NetworkURL(baseUrl: Constant.baseUrl, endpoint: .character, parameters: parameters).url else {
             fatalError("Invalid URL")
         }
         
