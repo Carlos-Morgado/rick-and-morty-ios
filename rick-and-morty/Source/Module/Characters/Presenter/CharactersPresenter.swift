@@ -12,8 +12,8 @@ protocol CharactersPresenter {
     var characters: [CharacterDTO] { get }
     func viewDidLoad()
     func didSelectRowAt(_ indexPath: IndexPath)
+    func getCharacters()
     func searchBarSearchButtonClicked(searchText: String)
-    
 }
 
 final class DefaultCharactersPresenter {
@@ -23,6 +23,7 @@ final class DefaultCharactersPresenter {
     private weak var viewController: CharactersView?
     private let router: CharactersRouter
     private let getCharactersInteractor: GetCharactersInteractorInput
+    private var isGettingCharacters: Bool = false
     
     init(router: CharactersRouter, viewController: CharactersView, getCharactersInteractor: GetCharactersInteractorInput) {
         self.router = router
@@ -37,7 +38,7 @@ final class DefaultCharactersPresenter {
 extension DefaultCharactersPresenter: CharactersPresenter {
     
     func viewDidLoad() {
-        getCharactersInteractor.getCharacters()
+        getCharacters()
     }
     
     func didSelectRowAt(_ indexPath: IndexPath) {
@@ -45,18 +46,29 @@ extension DefaultCharactersPresenter: CharactersPresenter {
         router.navigateToCharacterDetail(character)
     }
     
+    func getCharacters() {
+        if !isGettingCharacters {
+            isGettingCharacters = true
+            getCharactersInteractor.getCharacters()
+        }
+    }
+    
     func searchBarSearchButtonClicked(searchText: String) {
-        getCharactersInteractor.getCharacters(name: searchText)
+        characters = []
+        viewController?.reloadCharacters()
+        getCharactersInteractor.getCharacters(isNewSearch: true, name: searchText)
     }
 }
 
 extension DefaultCharactersPresenter: GetCharactersInteractorOutput {
     func manageGetCharactersSuccess(characters: [CharacterDTO]) {
-        self.characters = characters
-        viewController?.showCharactersList()
+        self.characters.append(contentsOf: characters)
+        viewController?.reloadCharacters()
+        isGettingCharacters = false
     }
     
     func manageGetCharactersError() {
         router.showNetworkErrorAlert()
+        isGettingCharacters = false
     }
 }
