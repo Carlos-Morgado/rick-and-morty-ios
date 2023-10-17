@@ -27,7 +27,7 @@ final class LocationDetailViewController: UIViewController {
         collectionView.backgroundColor = .clear
         collectionView.isScrollEnabled = true
         collectionView.register(LocationInfoCollectionViewCell.self, forCellWithReuseIdentifier: LocationInfoCollectionViewCell.identifier)
-        collectionView.register(LocationResidentsCollectionViewCell.self, forCellWithReuseIdentifier: LocationResidentsCollectionViewCell.identifier)
+        collectionView.register(CharactersSectionCollectionViewCell.self, forCellWithReuseIdentifier: CharactersSectionCollectionViewCell.identifier)
         return collectionView
     }()
     
@@ -83,7 +83,7 @@ extension LocationDetailViewController: UICollectionViewDataSource {
             locationInfoCell.setLocationInfoText(title: LocationTypeInfo.allCases[indexPath.row].localizedText, value: presenter.getLocationInfoCellValue(infoValue: LocationTypeInfo.allCases[indexPath.row]))
             return locationInfoCell
         case .locationResidentsSection:
-            guard let locationResidentsCell = locationCollectionView.dequeueReusableCell(withReuseIdentifier: LocationResidentsCollectionViewCell.identifier, for: indexPath) as? LocationResidentsCollectionViewCell else {
+            guard let locationResidentsCell = locationCollectionView.dequeueReusableCell(withReuseIdentifier: CharactersSectionCollectionViewCell.identifier, for: indexPath) as? CharactersSectionCollectionViewCell else {
                 return UICollectionViewCell()
             }
             let character = presenter.residents[indexPath.row]

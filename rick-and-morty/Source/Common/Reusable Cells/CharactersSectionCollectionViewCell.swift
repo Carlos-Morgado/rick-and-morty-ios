@@ -1,16 +1,15 @@
 //
-//  EpisodeCharactersCollectionViewCell.swift
+//  CharactersSectionCollectionViewCell.swift
 //  rick-and-morty
 //
-//  Created by Carlos Morgado on 20/9/23.
+//  Created by Carlos Morgado on 17/10/23.
 //
 
 import UIKit
 import Kingfisher
 
-final class EpisodeCharactersCollectionViewCell: UICollectionViewCell {
-    
-    static let identifier = "EpisodeCharactersCollectionViewCell"
+final class CharactersSectionCollectionViewCell: UICollectionViewCell {
+    static let identifier = "CharactersSectionCollectionViewCell"
     
     private let characterImageView: UIImageView = {
         let imageView = UIImageView()
@@ -64,7 +63,7 @@ final class EpisodeCharactersCollectionViewCell: UICollectionViewCell {
 
 // MARK: - EXTENSIONS
 
-private extension EpisodeCharactersCollectionViewCell {
+private extension CharactersSectionCollectionViewCell {
     func configView() {
         contentView.clipsToBounds = true
         contentView.backgroundColor = .mainBackgroundColor2

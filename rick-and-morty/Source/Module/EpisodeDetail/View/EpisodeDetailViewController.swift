@@ -32,7 +32,7 @@ final class EpisodeDetailViewController: UIViewController {
         collectionView.backgroundColor = .clear
         collectionView.isScrollEnabled = true
         collectionView.register(EpisodeInfoCollectionViewCell.self, forCellWithReuseIdentifier: EpisodeInfoCollectionViewCell.identifier)
-        collectionView.register(EpisodeCharactersCollectionViewCell.self, forCellWithReuseIdentifier: EpisodeCharactersCollectionViewCell.identifier)
+        collectionView.register(CharactersSectionCollectionViewCell.self, forCellWithReuseIdentifier: CharactersSectionCollectionViewCell.identifier)
         return collectionView
     }()
     
@@ -83,7 +83,7 @@ extension EpisodeDetailViewController: UICollectionViewDataSource {
             episodeInfoCell.setEpisodeInfoText(title: EpisodeTypeInfo.allCases[indexPath.row].localizedText, value: presenter.getEpisodeInfoCellValue(infoType: EpisodeTypeInfo.allCases[indexPath.row]))
             return episodeInfoCell
         case .episodeCharactersSection:
-            guard let episodeCharactersCell = episodeCollectionView.dequeueReusableCell(withReuseIdentifier: EpisodeCharactersCollectionViewCell.identifier, for: indexPath) as? EpisodeCharactersCollectionViewCell else {
+            guard let episodeCharactersCell = episodeCollectionView.dequeueReusableCell(withReuseIdentifier: CharactersSectionCollectionViewCell.identifier, for: indexPath) as? CharactersSectionCollectionViewCell else {
                 return UICollectionViewCell()
             }
             let character = presenter.characters[indexPath.row]
