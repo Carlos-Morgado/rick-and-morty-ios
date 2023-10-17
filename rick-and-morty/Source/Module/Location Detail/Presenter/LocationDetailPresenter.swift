@@ -8,8 +8,11 @@
 import Foundation
 
 protocol LocationDetailPresenter {
+    
     var location: LocationDTO { get }
+    var residents: [CharacterDTO] { get }
     func getLocationInfoCellValue(infoValue: LocationTypeInfo) -> String
+    func viewDidLoad()
 }
 
 final class DefaultLocationDetailPresenter {
@@ -17,11 +20,15 @@ final class DefaultLocationDetailPresenter {
     private let router: LocationDetailRouter
     private weak var viewController: LocationDetailView?
     var location: LocationDTO
+    let getCharacterDetailInteractor: GetCharacterDetailInteractorInput
     
-    init(router: LocationDetailRouter, viewController: LocationDetailView, location: LocationDTO) {
+    var residents: [CharacterDTO] = []
+    
+    init(router: LocationDetailRouter, viewController: LocationDetailView, location: LocationDTO, getCharacterDetailInteractor: GetCharacterDetailInteractorInput) {
         self.router = router
         self.viewController = viewController
         self.location = location
+        self.getCharacterDetailInteractor = getCharacterDetailInteractor
     }
 }
 
@@ -39,5 +46,22 @@ extension DefaultLocationDetailPresenter: LocationDetailPresenter {
             value = location.dimension.capitalized
         }
         return value
+    }
+    
+    func viewDidLoad() {
+        for resident in location.residents {
+            getCharacterDetailInteractor.getCharacterDetail(urlString: resident)
+        }
+    }
+}
+
+extension DefaultLocationDetailPresenter: GetCharacterDetailInteractorOutput {
+    func manageGetCharacterDetailSuccess(characterDetail: CharacterDTO) {
+        residents.append(characterDetail)
+        viewController?.reloadData()
+    }
+    
+    func manageGetCharacterDetailError() {
+        // TODO: Manage error
     }
 }

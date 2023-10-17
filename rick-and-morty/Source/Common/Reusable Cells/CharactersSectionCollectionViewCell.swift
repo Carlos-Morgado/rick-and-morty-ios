@@ -1,15 +1,15 @@
 //
-//  LocationResidentsCollectionViewCell.swift
+//  CharactersSectionCollectionViewCell.swift
 //  rick-and-morty
 //
-//  Created by Carlos Morgado on 21/9/23.
+//  Created by Carlos Morgado on 17/10/23.
 //
 
 import UIKit
+import Kingfisher
 
-final class LocationResidentsCollectionViewCell: UICollectionViewCell {
-    
-    static let identifier = "LocationResidentsCollectionViewCell"
+final class CharactersSectionCollectionViewCell: UICollectionViewCell {
+    static let identifier = "CharactersSectionCollectionViewCell"
     
     private let characterImageView: UIImageView = {
         let imageView = UIImageView()
@@ -49,11 +49,21 @@ final class LocationResidentsCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    func setValues(characterName: String, characterStatus: String) {
+        characterNameLabel.text = characterName
+        characterStatusLabel.text = characterStatus
+    }
+    
+    func setCellCharacterImage(_ image: String) {
+        let characterImageURL = URL(string: image)
+        characterImageView.kf.setImage(with: characterImageURL)
+    }
 }
 
 // MARK: - EXTENSIONS
 
-private extension LocationResidentsCollectionViewCell {
+private extension CharactersSectionCollectionViewCell {
     func configView() {
         contentView.clipsToBounds = true
         contentView.backgroundColor = .mainBackgroundColor2
@@ -84,4 +94,3 @@ private extension LocationResidentsCollectionViewCell {
         ])
     }
 }
-

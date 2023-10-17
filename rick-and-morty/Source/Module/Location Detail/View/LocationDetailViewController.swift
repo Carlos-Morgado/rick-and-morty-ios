@@ -8,7 +8,8 @@
 import UIKit
 
 protocol LocationDetailView: AnyObject {
-    
+    // Presenter -> View
+    func reloadData()
 }
 
 final class LocationDetailViewController: UIViewController {
@@ -26,7 +27,7 @@ final class LocationDetailViewController: UIViewController {
         collectionView.backgroundColor = .clear
         collectionView.isScrollEnabled = true
         collectionView.register(LocationInfoCollectionViewCell.self, forCellWithReuseIdentifier: LocationInfoCollectionViewCell.identifier)
-        collectionView.register(LocationResidentsCollectionViewCell.self, forCellWithReuseIdentifier: LocationResidentsCollectionViewCell.identifier)
+        collectionView.register(CharactersSectionCollectionViewCell.self, forCellWithReuseIdentifier: CharactersSectionCollectionViewCell.identifier)
         return collectionView
     }()
     
@@ -38,7 +39,7 @@ final class LocationDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
-
+        presenter?.viewDidLoad()
     }
 
 }
@@ -47,7 +48,9 @@ final class LocationDetailViewController: UIViewController {
 // MARK: - EXTENSIONS
 
 extension LocationDetailViewController: LocationDetailView {
-    
+    func reloadData() {
+        locationCollectionView.reloadData()
+    }
 }
 
 extension LocationDetailViewController: UICollectionViewDataSource {
@@ -62,7 +65,7 @@ extension LocationDetailViewController: UICollectionViewDataSource {
         case .locationInformationSection:
             return EpisodeTypeInfo.allCases.count
         case .locationResidentsSection:
-            return 8
+            return presenter?.residents.count ?? 0
         }
     }
     
@@ -80,9 +83,12 @@ extension LocationDetailViewController: UICollectionViewDataSource {
             locationInfoCell.setLocationInfoText(title: LocationTypeInfo.allCases[indexPath.row].localizedText, value: presenter.getLocationInfoCellValue(infoValue: LocationTypeInfo.allCases[indexPath.row]))
             return locationInfoCell
         case .locationResidentsSection:
-            guard let locationResidentsCell = locationCollectionView.dequeueReusableCell(withReuseIdentifier: LocationResidentsCollectionViewCell.identifier, for: indexPath) as? LocationResidentsCollectionViewCell else {
+            guard let locationResidentsCell = locationCollectionView.dequeueReusableCell(withReuseIdentifier: CharactersSectionCollectionViewCell.identifier, for: indexPath) as? CharactersSectionCollectionViewCell else {
                 return UICollectionViewCell()
             }
+            let character = presenter.residents[indexPath.row]
+            locationResidentsCell.setValues(characterName: character.name, characterStatus: character.status.localizedText)
+            locationResidentsCell.setCellCharacterImage(character.image)
             return locationResidentsCell
         }
     }

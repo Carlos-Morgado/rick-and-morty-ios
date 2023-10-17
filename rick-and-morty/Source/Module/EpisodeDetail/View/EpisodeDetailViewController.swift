@@ -8,7 +8,8 @@
 import UIKit
 
 protocol EpisodeDetailView: AnyObject {
-    
+    // Presenter -> View
+    func reloadData()
 }
 
 final class EpisodeDetailViewController: UIViewController {
@@ -31,13 +32,14 @@ final class EpisodeDetailViewController: UIViewController {
         collectionView.backgroundColor = .clear
         collectionView.isScrollEnabled = true
         collectionView.register(EpisodeInfoCollectionViewCell.self, forCellWithReuseIdentifier: EpisodeInfoCollectionViewCell.identifier)
-        collectionView.register(EpisodeCharactersCollectionViewCell.self, forCellWithReuseIdentifier: EpisodeCharactersCollectionViewCell.identifier)
+        collectionView.register(CharactersSectionCollectionViewCell.self, forCellWithReuseIdentifier: CharactersSectionCollectionViewCell.identifier)
         return collectionView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
+        presenter?.viewDidLoad()
     }
     
 
@@ -46,7 +48,9 @@ final class EpisodeDetailViewController: UIViewController {
 // MARK: - EXTENSIONS
 
 extension EpisodeDetailViewController: EpisodeDetailView {
-    
+    func reloadData() {
+        episodeCollectionView.reloadData()
+    }
 }
 
 extension EpisodeDetailViewController: UICollectionViewDataSource {
@@ -61,7 +65,7 @@ extension EpisodeDetailViewController: UICollectionViewDataSource {
         case .episodeInformationSection:
             return EpisodeTypeInfo.allCases.count
         case .episodeCharactersSection:
-            return 8
+            return presenter?.characters.count ?? 0
         }
     }
     
@@ -79,9 +83,12 @@ extension EpisodeDetailViewController: UICollectionViewDataSource {
             episodeInfoCell.setEpisodeInfoText(title: EpisodeTypeInfo.allCases[indexPath.row].localizedText, value: presenter.getEpisodeInfoCellValue(infoType: EpisodeTypeInfo.allCases[indexPath.row]))
             return episodeInfoCell
         case .episodeCharactersSection:
-            guard let episodeCharactersCell = episodeCollectionView.dequeueReusableCell(withReuseIdentifier: EpisodeCharactersCollectionViewCell.identifier, for: indexPath) as? EpisodeCharactersCollectionViewCell else {
+            guard let episodeCharactersCell = episodeCollectionView.dequeueReusableCell(withReuseIdentifier: CharactersSectionCollectionViewCell.identifier, for: indexPath) as? CharactersSectionCollectionViewCell else {
                 return UICollectionViewCell()
             }
+            let character = presenter.characters[indexPath.row]
+            episodeCharactersCell.setValues(characterName: character.name, characterStatus: character.status.localizedText)
+            episodeCharactersCell.setCellCharacterImage(character.image)
             return episodeCharactersCell
         }
     }

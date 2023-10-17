@@ -18,10 +18,12 @@ final class DefaultLocationDetailRouter {
     static func create(location: LocationDTO) -> UIViewController {
         var router: LocationDetailRouter = DefaultLocationDetailRouter()
         let viewController = LocationDetailViewController()
-        let presenter = DefaultLocationDetailPresenter(router: router, viewController: viewController, location: location)
+        var getCharacterDetailInteractor: GetCharacterDetailInteractorInput = DefaultGetCharacterDetailInteractor()
+        let presenter = DefaultLocationDetailPresenter(router: router, viewController: viewController, location: location, getCharacterDetailInteractor: getCharacterDetailInteractor)
         
         viewController.presenter = presenter
         router.viewController = viewController
+        getCharacterDetailInteractor.presenter = presenter
         
         return viewController
     }
