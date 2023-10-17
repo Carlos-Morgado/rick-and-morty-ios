@@ -7,10 +7,16 @@
 
 import Foundation
 
+enum CharacterDataSourceError: Error {
+    case invalidUrl
+}
+
 protocol CharacterDataSource {
     // Interactor -> DataSource
     func getCharacters(isNewSearch: Bool, name: String?, successCompletionDataSource: @escaping ([CharacterDTO]) -> Void, errorCompletionDataSource: @escaping (Error) -> Void)
+    func getCharacterDetail(urlString: String, successCompletionDataSource: @escaping (CharacterDTO) -> Void, errorCompletionDataSource: @escaping (Error) -> Void)
 }
+
 
 extension CharacterDataSource {
     
@@ -66,5 +72,19 @@ extension DefaultCharacterDataSource: CharacterDataSource {
             errorCompletionDataSource(error)
         }
         
+    }
+    
+    func getCharacterDetail(urlString: String, successCompletionDataSource: @escaping (CharacterDTO) -> Void, errorCompletionDataSource: @escaping (Error) -> Void) {
+        guard let characterDetailURL = URL(string: urlString) else {
+            errorCompletionDataSource(CharacterDataSourceError.invalidUrl)
+            return
+        }
+        
+        networkManager.request(url: characterDetailURL, httpMethod: .get) { result in
+            let dto = result as CharacterDTO
+            successCompletionDataSource(dto)
+        } errorCompletionNetworkManager: { error in
+            errorCompletionDataSource(error)
+        }
     }
 }

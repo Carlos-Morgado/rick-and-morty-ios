@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class EpisodeCharactersCollectionViewCell: UICollectionViewCell {
     
@@ -48,6 +49,16 @@ final class EpisodeCharactersCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    func setValues(characterName: String, characterStatus: String) {
+        characterNameLabel.text = characterName
+        characterStatusLabel.text = characterStatus
+    }
+    
+    func setCellCharacterImage(_ image: String) {
+        let characterImageURL = URL(string: image)
+        characterImageView.kf.setImage(with: characterImageURL)
     }
 }
 

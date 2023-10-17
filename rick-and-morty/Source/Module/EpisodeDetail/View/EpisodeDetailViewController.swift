@@ -8,7 +8,8 @@
 import UIKit
 
 protocol EpisodeDetailView: AnyObject {
-    
+    // Presenter -> View
+    func reloadData()
 }
 
 final class EpisodeDetailViewController: UIViewController {
@@ -38,6 +39,7 @@ final class EpisodeDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
+        presenter?.viewDidLoad()
     }
     
 
@@ -46,7 +48,9 @@ final class EpisodeDetailViewController: UIViewController {
 // MARK: - EXTENSIONS
 
 extension EpisodeDetailViewController: EpisodeDetailView {
-    
+    func reloadData() {
+        episodeCollectionView.reloadData()
+    }
 }
 
 extension EpisodeDetailViewController: UICollectionViewDataSource {
@@ -61,7 +65,7 @@ extension EpisodeDetailViewController: UICollectionViewDataSource {
         case .episodeInformationSection:
             return EpisodeTypeInfo.allCases.count
         case .episodeCharactersSection:
-            return 8
+            return presenter?.characters.count ?? 0
         }
     }
     
@@ -82,6 +86,9 @@ extension EpisodeDetailViewController: UICollectionViewDataSource {
             guard let episodeCharactersCell = episodeCollectionView.dequeueReusableCell(withReuseIdentifier: EpisodeCharactersCollectionViewCell.identifier, for: indexPath) as? EpisodeCharactersCollectionViewCell else {
                 return UICollectionViewCell()
             }
+            let character = presenter.characters[indexPath.row]
+            episodeCharactersCell.setValues(characterName: character.name, characterStatus: character.status.localizedText)
+            episodeCharactersCell.setCellCharacterImage(character.image)
             return episodeCharactersCell
         }
     }

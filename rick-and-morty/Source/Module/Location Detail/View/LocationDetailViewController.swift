@@ -8,7 +8,8 @@
 import UIKit
 
 protocol LocationDetailView: AnyObject {
-    
+    // Presenter -> View
+    func reloadData()
 }
 
 final class LocationDetailViewController: UIViewController {
@@ -38,7 +39,7 @@ final class LocationDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
-
+        presenter?.viewDidLoad()
     }
 
 }
@@ -47,7 +48,9 @@ final class LocationDetailViewController: UIViewController {
 // MARK: - EXTENSIONS
 
 extension LocationDetailViewController: LocationDetailView {
-    
+    func reloadData() {
+        locationCollectionView.reloadData()
+    }
 }
 
 extension LocationDetailViewController: UICollectionViewDataSource {
@@ -62,7 +65,7 @@ extension LocationDetailViewController: UICollectionViewDataSource {
         case .locationInformationSection:
             return EpisodeTypeInfo.allCases.count
         case .locationResidentsSection:
-            return 8
+            return presenter?.residents.count ?? 0
         }
     }
     
@@ -83,6 +86,9 @@ extension LocationDetailViewController: UICollectionViewDataSource {
             guard let locationResidentsCell = locationCollectionView.dequeueReusableCell(withReuseIdentifier: LocationResidentsCollectionViewCell.identifier, for: indexPath) as? LocationResidentsCollectionViewCell else {
                 return UICollectionViewCell()
             }
+            let character = presenter.residents[indexPath.row]
+            locationResidentsCell.setValues(characterName: character.name, characterStatus: character.status.localizedText)
+            locationResidentsCell.setCellCharacterImage(character.image)
             return locationResidentsCell
         }
     }
