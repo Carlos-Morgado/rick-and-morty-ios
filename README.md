@@ -1,9 +1,12 @@
-# Rick-and-Morty
+# Rick&Morty
+
+
+
+### Proyecto realizado durante
+> ##### Si te gusta el proyecto, apóyalo haciendo "★ Star" en el repositorio. ¡Gracias!
+
+## Introduction
 This project is about to build a Rick and Morty themed iOS app using Swift and UIKit framework.
-
-
-### Proyecto realizado durante emisiones en directo desde [Twitch](https://twitch.tv/mouredev). Cada semana le dedico un día a un nuevo lenguaje de programación.
-> ##### Si consideras útil el curso, apóyalo haciendo "★ Star" en el repositorio. ¡Gracias!
 
 ## Characteristics Overview
 - Written in Swift
