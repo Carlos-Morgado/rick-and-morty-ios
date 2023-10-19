@@ -37,6 +37,7 @@
 // MARK: - EPISODES SCREEN
 
 "episodes_screen_navigation_title" = "Episodes";
+"episodes_searchbar_placeholder" = "Search episode";
 
 // MARK: - EPISODE DETAIL SCREEN
 "episode_name_type_info" = "Episode Name";
@@ -48,6 +49,7 @@
 
 "locations_screen_navigation_title" = "Locations";
 "location_type_label" = "Type:";
+"locations_searchbar_placeholder" = "Search location";
 
 // MARK: - LOCATION DETAIL SCREEN
 

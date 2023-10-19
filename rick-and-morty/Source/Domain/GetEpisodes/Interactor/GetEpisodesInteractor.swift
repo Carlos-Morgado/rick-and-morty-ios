@@ -16,7 +16,14 @@ protocol GetEpisodesInteractorOutput: AnyObject {
 protocol GetEpisodesInteractorInput {
     // Presenter -> Interactor
     var presenter: GetEpisodesInteractorOutput? { get set } // Reading and writting variables
-    func getEpisodes()
+    func getEpisodes(isNewSearch: Bool, name: String?)
+}
+
+extension GetEpisodesInteractorInput {
+    
+    func getEpisodes(isNewSearch: Bool = false, name: String? = nil) {
+        getEpisodes(isNewSearch: isNewSearch, name: name)
+    }
 }
 
 final class DefaultGetEpisodesInteractor {
@@ -30,8 +37,8 @@ final class DefaultGetEpisodesInteractor {
 // MARK: - EXTENSIONS
 
 extension DefaultGetEpisodesInteractor: GetEpisodesInteractorInput {
-    func getEpisodes() {
-        episodesDataSource.getEpisodes(successCompletionDataSource: { [weak self] episodes in // DataSource successCompletion variable name
+    func getEpisodes(isNewSearch: Bool = false, name: String? = nil) {
+        episodesDataSource.getEpisodes(isNewSearch: isNewSearch, name: name, successCompletionDataSource: { [weak self] episodes in // DataSource successCompletion variable name
            self?.presenter?.manageGetEpisodesSuccess(episodes: episodes)
         }, errorCompletionDataSource: { [weak self] _ in
             self?.presenter?.manageGetEpisodesError()

@@ -11,6 +11,7 @@ import UIKit
 protocol LocationsRouter {
     var viewController: UIViewController? { get set }
     func navigateToLocationDetail(_ location: LocationDTO)
+    func showNetworkErrorAlert()
 }
 
 final class DefaultLocationsRouter {
@@ -37,5 +38,19 @@ extension DefaultLocationsRouter: LocationsRouter {
     func navigateToLocationDetail(_ location: LocationDTO) {
         let locationDetailModule = DefaultLocationDetailRouter.create(location: location)
         viewController?.navigationController?.pushViewController(locationDetailModule, animated: true)
+    }
+    
+    func showNetworkErrorAlert() {
+        let alert = UIAlertController(title: "characters_network_error_alert_title".localized, message: "characters_network_error_alert_message".localized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "characters_network_error_alert_button".localized, style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                // TODO: Manage error alert action
+                break
+            default:
+                break
+            }
+        }))
+        viewController?.present(alert, animated: true)
     }
 }

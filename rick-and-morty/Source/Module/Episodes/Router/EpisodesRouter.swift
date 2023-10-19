@@ -11,6 +11,7 @@ import UIKit
 protocol EpisodesRouter {
     var viewController: UIViewController? { get set }
     func navigateToEpisodeDetail(_ episode: EpisodeDTO)
+    func showNetworkErrorAlert()
 }
 
 final class DefaultEpisodesRouter {
@@ -37,6 +38,20 @@ extension DefaultEpisodesRouter: EpisodesRouter {
     func navigateToEpisodeDetail(_ episode: EpisodeDTO) {
         let episodeDetailModule = DefaultEpisodeDetailRouter.create(episode: episode)
         viewController?.navigationController?.pushViewController(episodeDetailModule, animated: true)
+    }
+    
+    func showNetworkErrorAlert() {
+        let alert = UIAlertController(title: "characters_network_error_alert_title".localized, message: "characters_network_error_alert_message".localized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "characters_network_error_alert_button".localized, style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                // TODO: Manage error alert action
+                break
+            default:
+                break
+            }
+        }))
+        viewController?.present(alert, animated: true)
     }
     
 }
