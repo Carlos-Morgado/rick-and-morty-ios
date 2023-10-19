@@ -116,24 +116,24 @@ extension LocationsViewController: UITableViewDataSource {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        // Obtén la altura del contenido de la tabla
-        let contenidoTablaAltura = locationsTableView.contentSize.height
+        // Get the height of the table content
+        let heightContentTable = locationsTableView.contentSize.height
         
-        // Obtén la posición actual de desplazamiento
-        let posicionDesplazamiento = locationsTableView.contentOffset.y
+        // Get the current offset position
+        let offsetPosition = locationsTableView.contentOffset.y
         
-        // Obtén la altura de la vista visible
-        let vistaAltura = locationsTableView.frame.size.height
+        // Get the height of the visible view
+        let heightOfTheView = locationsTableView.frame.size.height
         
-        // Determina cuántos puntos faltan para llegar al final
-        let puntosRestantes = contenidoTablaAltura - (posicionDesplazamiento + vistaAltura)
+        // Determine how many points are left to go to the end
+        let remainingPoints = heightContentTable - (offsetPosition + heightOfTheView)
         
-        // Define una constante para determinar cuántos puntos se consideran "cerca del final"
-        let puntosCercaDelFinal: CGFloat = 100.0 // Ajusta este valor según tus necesidades
+        // Define a constant to determine how many points are considered "near the end".
+        let pointsNearTheEnd: CGFloat = 100.0 // Adjust this value according to your needs
         
-        if puntosRestantes < puntosCercaDelFinal {
-            // Estás cerca del final de la tabla
-            // Puedes cargar más datos o realizar la acción que desees aquí
+        if remainingPoints < pointsNearTheEnd {
+            // You are near to the end of the table
+            // You can upload more data or perform the desired action here
             presenter?.getLocations()
         }
     }
@@ -152,9 +152,9 @@ extension LocationsViewController: UITableViewDelegate {
 extension LocationsViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let searchText = searchBar.text {
-            // Aquí puedes realizar alguna acción con el término de búsqueda, como buscar en una base de datos o realizar alguna otra tarea relacionada.
+            // Here you can perform some action on the search term, such as searching a database or performing some other related task.
             presenter?.searchBarSearchButtonClicked(searchText: searchText)
         }
-        searchBar.resignFirstResponder() // Oculta el teclado
+        searchBar.resignFirstResponder() // Hide the keyboard
     }
 }

@@ -89,7 +89,6 @@
 		C4198F922AB049D30015EB21 /* CharacterPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		C425AECB2AB5D70800923746 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		C43517FA2A8E4B8F00095D38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		C43517FD2A8E4BDE00095D38 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C442A0C32A8F63A3001FBF70 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		C442A0CC2A8F7889001FBF70 /* GetCharactersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharactersInteractor.swift; sourceTree = "<group>"; };
 		C442A0D02A8F79B9001FBF70 /* CharactersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRouter.swift; sourceTree = "<group>"; };
@@ -909,7 +908,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				C43517FA2A8E4B8F00095D38 /* en */,
-				C43517FD2A8E4BDE00095D38 /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

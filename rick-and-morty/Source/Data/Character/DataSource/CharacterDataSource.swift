@@ -48,9 +48,9 @@ extension DefaultCharacterDataSource: CharacterDataSource {
             url = NetworkURL(baseUrl: Constant.baseUrl, endpoint: .character, parameters: parameters).url
         } else {
             if let paginationInfo {
-                // Tenemos información de la paginación
+                // We have pagination info
                 guard let nextUrl = paginationInfo.next else {
-                    // No existe siguiente página, porque ya es la última, ya no tenemos que pedir más info
+                    // Next page doesn't exists, because is the last, we no longer have to ask for more info
                     return
                 }
                 url = URL(string: nextUrl)
