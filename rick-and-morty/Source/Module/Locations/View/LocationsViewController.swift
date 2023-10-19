@@ -125,14 +125,14 @@ extension LocationsViewController: UITableViewDataSource {
         // Get the height of the visible view
         let heightOfTheView = locationsTableView.frame.size.height
         
-        // Determina cuántos puntos faltan para llegar al final
+        // Determine how many points are left to go to the end
         let remainingPoints = heightContentTable - (offsetPosition + heightOfTheView)
         
         // Define a constant to determine how many points are considered "near the end".
-        let pointsNearTheEnd: CGFloat = 100.0 // Ajusta este valor según tus necesidades
+        let pointsNearTheEnd: CGFloat = 100.0 // Adjust this value according to your needs
         
         if remainingPoints < pointsNearTheEnd {
-            // Your are near to the end of the table
+            // You are near to the end of the table
             // You can upload more data or perform the desired action here
             presenter?.getLocations()
         }
@@ -155,6 +155,6 @@ extension LocationsViewController: UISearchBarDelegate {
             // Here you can perform some action on the search term, such as searching a database or performing some other related task.
             presenter?.searchBarSearchButtonClicked(searchText: searchText)
         }
-        searchBar.resignFirstResponder() // Oculta el teclado
+        searchBar.resignFirstResponder() // Hide the keyboard
     }
 }
