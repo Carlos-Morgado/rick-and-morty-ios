@@ -12,6 +12,8 @@ protocol LocationsPresenter {
     var locations: [LocationDTO] { get }
     func viewDidLoad()
     func didSelectRowAt(_ indexPath: IndexPath)
+    func getLocations()
+    func searchBarSearchButtonClicked(searchText: String)
 }
 
 final class DefaultLocationsPresenter {
@@ -21,6 +23,8 @@ final class DefaultLocationsPresenter {
     private weak var viewController: LocationsView?
     private let router: LocationsRouter
     private let getLocationsInteractor: GetLocationsInteractorInput
+    
+    private var isGettingLocations: Bool = false
     
     init(router: LocationsRouter, viewController: LocationsView, getLocationsInteractor: GetLocationsInteractorInput) {
         self.router = router
@@ -32,7 +36,6 @@ final class DefaultLocationsPresenter {
 // MARK: - EXTENSIONS
 
 extension DefaultLocationsPresenter: LocationsPresenter {
-    
     func viewDidLoad() {
         getLocationsInteractor.getLocations()
     }
@@ -41,16 +44,31 @@ extension DefaultLocationsPresenter: LocationsPresenter {
         let location = locations[indexPath.row]
         router.navigateToLocationDetail(location)
     }
+    
+    func getLocations() {
+        if !isGettingLocations {
+            isGettingLocations = true
+            getLocationsInteractor.getLocations()
+        }
+    }
+    
+    func searchBarSearchButtonClicked(searchText: String) {
+        locations = []
+        viewController?.reloadLocations()
+        getLocationsInteractor.getLocations(isNewSearch: true, name: searchText)
+    }
 }
 
 extension DefaultLocationsPresenter: GetLocationsInteractorOutput {
     func manageGetLocationsSuccess(locations: [LocationDTO]) {
-        self.locations = locations
-        viewController?.showLocationsList()
+        self.locations.append(contentsOf: locations)
+        viewController?.reloadLocations()
+        isGettingLocations = false
     }
     
     func manageGetLocationsError() {
-        
+        router.showNetworkErrorAlert()
+        isGettingLocations = false
     }
     
 }

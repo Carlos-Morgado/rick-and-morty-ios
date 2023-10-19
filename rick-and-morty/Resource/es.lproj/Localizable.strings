@@ -34,6 +34,7 @@
 "character-location-type-info" = "Localización";
 "character-created-type-info" = "Creado";
 "character-episode-count-type-info" = "Número de episodios";
+"episodes_searchbar_placeholder" = "Buscar episodio";
 
 // MARK: - EPISODES SCREEN
 
@@ -49,6 +50,7 @@
 
 "locations_screen_navigation_title" = "Localizaciones";
 "location_type_label" = "Tipo:";
+"locations_searchbar_placeholder" = "Buscar localización";
 
 // MARK: - LOCATION DETAIL SCREEN
 

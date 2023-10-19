@@ -16,7 +16,14 @@ protocol GetLocationsInteractorOutput: AnyObject {
 protocol GetLocationsInteractorInput {
     // Presenter -> Interactor
     var presenter: GetLocationsInteractorOutput? { get set } // Reading and writting variables
-    func getLocations()
+    func getLocations(isNewSearch: Bool, name: String?)
+}
+
+extension GetLocationsInteractorInput {
+    
+    func getLocations(isNewSearch: Bool = false, name: String? = nil) {
+        getLocations(isNewSearch: isNewSearch, name: name)
+    }
 }
 
 final class DefaultGetLocationsInteractor {
@@ -30,8 +37,8 @@ final class DefaultGetLocationsInteractor {
 // MARK: - EXTENSIONS
 
 extension DefaultGetLocationsInteractor: GetLocationsInteractorInput {
-    func getLocations() {
-        locationsDataSource.getLocations(successCompletionDataSource: { [weak self] locations in // DataSource successCompletion variable name
+    func getLocations(isNewSearch: Bool = false, name: String? = nil) {
+        locationsDataSource.getLocations(isNewSearch: isNewSearch, name: name, successCompletionDataSource: { [weak self] locations in // DataSource successCompletion variable name
            self?.presenter?.manageGetLocationsSuccess(locations: locations)
         }, errorCompletionDataSource: { [weak self] _ in
             self?.presenter?.manageGetLocationsError()
