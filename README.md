@@ -45,6 +45,12 @@ This project uses Clean Architecture and is separated into four main layers:
 * **Core**: Contains the common code between the other layers, like the extensions and the dependency
   injection code.
 
+  ## Architecture
+  
+<p align="center">
+  <img width="800" src="./Resources/Architecture.png" alt="Marvel Client">
+</p>
+
 
 ## Folder Structure
 
