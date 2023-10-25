@@ -27,7 +27,7 @@ This app is created as a personal project to showcase my skills and passion for 
 
 | Launch Screen | List | Search | Details |
 | :-: | :-: | :-: | :-: |
-| <img src="F1.jpeg"/> | <img src="Settings/Assets/Characters.png"/> | <img src="Settings/Assets/Search.png"/> | <img src="Settings/Assets/Details.png"/>
+| <img src="F1.jpeg"> | <img src="Settings/Assets/Characters.png"/> | <img src="Settings/Assets/Search.png"/> | <img src="Settings/Assets/Details.png"/>
 
 ## Project Concept and Structure
 
