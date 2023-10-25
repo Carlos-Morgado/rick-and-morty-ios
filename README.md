@@ -89,8 +89,14 @@ This project uses Clean Architecture and is separated into four main layers:
 
 
 ## Development Enviroment
+* Xcode 14.3.1
+* Swift 5.8.1
+* iOS Deployment Target 16.2
 
+## Author
+* [**Carlos Morgado**](https://github.com/Carlos-Morgado)
 
+  
 ## Characteristics Overview
 - Written in Swift
 - Using UIKit framework
