@@ -48,7 +48,7 @@ This project uses Clean Architecture and is separated into four main layers:
 ## Architecture Scheme
   
 <p align="center">
-  <img width="800" src="./Resources/Architecture.png" alt="Marvel Client">
+  <img width="800" src="./Resources/Architecture.png" alt="">
 </p>
 
 
