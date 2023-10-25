@@ -4,6 +4,15 @@
 
 > ##### If you like this project, support it by "★ Star" in the repository. Thank you!
 
+<p align="center">
+<br>
+SwiftyMarvel is a SwiftUI app that uses the Marvel API to display a list of Marvel characters and their details. You can browse through hundreds of heroes and villains from the Marvel universe, see their comics, and learn more about their powers and abilities.
+ <br>
+ <br>
+This app is created as a personal project to showcase my skills and passion for iOS development. This app demonstrates how to implement Clean Architecture and some of best practices for iOS app development using SwiftUI, CoreData, Combine, MVVM, Dependency Injection, Unit Testing, Code Coverage, and more.
+<br>
+</p>
+
 ## Introduction
 This project is about to build a Rick and Morty themed iOS app using Swift and UIKit framework.
 
