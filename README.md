@@ -1,4 +1,4 @@
-# Rick&Morty
+<h1 align="center"> Rick&Morty (UIKit Version) </h1>
 
 
 
