@@ -33,7 +33,7 @@ This app is created as a personal project to showcase my skills and passion for 
 
 | Tool                                                                                                  | Used for                                                             |
 |-------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
-| [MVVM](https://www.hackingwithswift.com/books/ios-swiftui/introducing-mvvm-into-your-swiftui-project) | Architectural design pattern for separating the logic form the views |
+| VIPER |                                                                                               | Architectural design pattern for separating the logic form the views |
 | [Core Data](https://developer.apple.com/documentation/coredata/)                                      | Storing favorite characters                                          |
 | [Swinject](https://github.com/Swinject/Swinject)                                                      | Dependency Injection                                                 |
 | [Arkana](https://github.com/rogerluan/arkana)                                                         | Securely storing secrets and keys                                    |
