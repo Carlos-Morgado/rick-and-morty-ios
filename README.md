@@ -25,8 +25,8 @@ This app is created as a personal project to showcase my skills and passion for 
 
 ## How it looks
 
-| List | Detail | Search | Details |
-| :-: | :-: | :-: | :-: |
+| List | Detail |
+| :-: | :-: |
 | <img src="https://github.com/Carlos-Morgado/rick-and-morty-ios/assets/122310905/04d37cfa-38e5-45b8-bf95-6b36266ec0f0"/> | <img src="Settings/Assets/Characters.png"/> | <img src="Settings/Assets/Search.png"/> | <img src="Settings/Assets/Details.png"/>
 
 ## Project Concept and Structure
