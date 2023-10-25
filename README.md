@@ -16,7 +16,7 @@ This app is created as a personal project to showcase my skills and passion for 
 <!-- TOC -->
 
 * [How it looks](#how-it-looks)
-* [Project Structure](#project-structure)
+* [Architecture and Concept](#architecture-and-concept)
 * [Folder Structure](#folder-structure)
 * [Tools & Frameworks Used](#tools--frameworks-used)
 * [Development Environment](#development-environment)
@@ -29,7 +29,7 @@ This app is created as a personal project to showcase my skills and passion for 
 | :-: | :-: |
 | <img src="https://github.com/Carlos-Morgado/rick-and-morty-ios/assets/122310905/04d37cfa-38e5-45b8-bf95-6b36266ec0f0"/> | <img src="Settings/Assets/Characters.png"/> | <img src="Settings/Assets/Search.png"/> | <img src="Settings/Assets/Details.png"/>
 
-## Project Concept and Structure
+## Architecture and Concept
 
 This project uses Clean Architecture and is separated into four main layers:
 
