@@ -23,13 +23,13 @@ This app is created as a personal project to showcase my skills and passion for 
 
 <!-- TOC -->
 
-## Screenshots
+## How it looks
 
 | Launch Screen | List | Search | Details |
 | :-: | :-: | :-: | :-: |
 | <img src="Settings/Assets/Launch.png"/> | <img src="Settings/Assets/Characters.png"/> | <img src="Settings/Assets/Search.png"/> | <img src="Settings/Assets/Details.png"/>
 
-## Project Structure
+## Project Concept and Structure
 
 This project uses Clean Architecture and is separated into four main layers:
 
@@ -88,7 +88,7 @@ This project uses Clean Architecture and is separated into four main layers:
 | [Mockingbird](https://github.com/birdrides/mockingbird)                                               | Generating mock, stub, and verify objects in Swift unit tests        |
 
 
-## Development Enviroment
+## Development Environment
 * Xcode 14.3.1
 * Swift 5.8.1
 * iOS Deployment Target 16.2
