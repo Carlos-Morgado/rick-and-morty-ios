@@ -25,6 +25,10 @@ This app is created as a personal project to showcase my skills and passion for 
 
 ## Screenshots
 
+| Launch Screen | List | Search | Details |
+| :-: | :-: | :-: | :-: |
+| <img src="Settings/Assets/Launch.png"/> | <img src="Settings/Assets/Characters.png"/> | <img src="Settings/Assets/Search.png"/> | <img src="Settings/Assets/Details.png"/>
+
 ## Project Structure
 
 This project uses Clean Architecture and is separated into four main layers:
