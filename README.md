@@ -13,8 +13,35 @@ This app is created as a personal project to showcase my skills and passion for 
 <br>
 </p>
 
-## Introduction
-This project is about to build a Rick and Morty themed iOS app using Swift and UIKit framework.
+<!-- TOC -->
+
+* [Screenshots](#screenshots)
+* [Project Structure](#project-structure)
+    * [Folder Structure](#folder-structure)
+* [Tools & Frameworks Used](#tools--frameworks-used)
+* [Development Environment](#development-environment)
+
+<!-- TOC -->
+
+## Screenshots
+
+## Project Structure
+
+## Folder Structure
+
+## Tools & Frameworks Used
+
+| Tool                                                                                                  | Used for                                                             |
+|-------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
+| [MVVM](https://www.hackingwithswift.com/books/ios-swiftui/introducing-mvvm-into-your-swiftui-project) | Architectural design pattern for separating the logic form the views |
+| [Core Data](https://developer.apple.com/documentation/coredata/)                                      | Storing favorite characters                                          |
+| [Swinject](https://github.com/Swinject/Swinject)                                                      | Dependency Injection                                                 |
+| [Arkana](https://github.com/rogerluan/arkana)                                                         | Securely storing secrets and keys                                    |
+| [Nuke](https://github.com/kean/Nuke)                                                                  | Image Loading & Caching                                              |
+| [SwiftLint](https://github.com/realm/SwiftLint)                                                       | Code Linting                                                         |
+| [Mockingbird](https://github.com/birdrides/mockingbird)                                               | Generating mock, stub, and verify objects in Swift unit tests        |
+
+
 
 ## Characteristics Overview
 - Written in Swift
