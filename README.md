@@ -15,7 +15,7 @@ This app is created as a personal project to showcase my skills and passion for 
 
 <!-- TOC -->
 
-* [Screenshots](#screenshots)
+* [Screenshots](#how-it-looks)
 * [Project Structure](#project-structure)
 * [Folder Structure](#folder-structure)
 * [Tools & Frameworks Used](#tools--frameworks-used)
