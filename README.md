@@ -6,10 +6,10 @@
 
 <p align="center">
 <br>
-SwiftyMarvel is a SwiftUI app that uses the Marvel API to display a list of Marvel characters and their details. You can browse through hundreds of heroes and villains from the Marvel universe, see their comics, and learn more about their powers and abilities.
+Rick&Morty is a UIKit app that uses the Rick&Morty API to display a different contents and their details. You can browse through hundreds of heroes and villains from the Rick&Morty universe, see all the episodes, and learn more about locations and planets.
  <br>
  <br>
-This app is created as a personal project to showcase my skills and passion for iOS development. This app demonstrates how to implement Clean Architecture and some of best practices for iOS app development using SwiftUI, CoreData, Combine, MVVM, Dependency Injection, Unit Testing, Code Coverage, and more.
+This app is created as a personal project to showcase my skills and passion for iOS development. This app demonstrates how to implement Clean Architecture and some of best practices for iOS app development using UIkit, CoreData, Combine, VIPER, Dependency Injection, and more.
 <br>
 </p>
 
@@ -25,7 +25,7 @@ This app is created as a personal project to showcase my skills and passion for 
 
 ## How it looks
 
-| Launch Screen | List | Search | Details |
+| List | Detail | Search | Details |
 | :-: | :-: | :-: | :-: |
 | <img src="https://github.com/Carlos-Morgado/rick-and-morty-ios/assets/122310905/04d37cfa-38e5-45b8-bf95-6b36266ec0f0"/> | <img src="Settings/Assets/Characters.png"/> | <img src="Settings/Assets/Search.png"/> | <img src="Settings/Assets/Details.png"/>
 
