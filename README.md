@@ -16,7 +16,7 @@ This application was created with the aim of learning new skills of the iOS deve
 <!-- TOC -->
 
 * [How it looks](#how-it-looks)
-* [Architecture and Concept](#architecture-and-concept)
+* [Architecture Design](#architecture-design)
 * [Folder Structure](#folder-structure)
 * [Tools & Frameworks Used](#tools--frameworks-used)
 * [Development Environment](#development-environment)
@@ -27,9 +27,9 @@ This application was created with the aim of learning new skills of the iOS deve
 
 | List | Detail |
 | :-: | :-: |
-| <img src="https://github.com/Carlos-Morgado/rick-and-morty-ios/assets/122310905/04d37cfa-38e5-45b8-bf95-6b36266ec0f0"/> | <img src="Settings/Assets/Characters.png"/> | <img src="Settings/Assets/Search.png"/> | <img src="Settings/Assets/Details.png"/>
+| <img src="https://github.com/Carlos-Morgado/rick-and-morty-ios/assets/122310905/96ff88bf-c539-4973-a618-46c92dffecd2"/> | <img src="Settings/Assets/Characters.png"/> | <img src="Settings/Assets/Search.png"/> | <img src="Settings/Assets/Details.png"/>
 
-## Architecture and Concept
+## Architecture Design
 
 This project uses Clean Architecture and is separated into four main layers:
 
