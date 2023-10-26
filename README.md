@@ -27,7 +27,7 @@ This application was created with the aim of learning new skills of the iOS deve
 
 | List | Detail |
 | :-: | :-: |
-| <img src="https://github.com/Carlos-Morgado/rick-and-morty-ios/assets/122310905/96ff88bf-c539-4973-a618-46c92dffecd2"/> | <img src="Settings/Assets/Characters.png"/> | <img src="Settings/Assets/Search.png"/> | <img src="Settings/Assets/Details.png"/>
+| <img width="200" src="https://github.com/Carlos-Morgado/rick-and-morty-ios/assets/122310905/96ff88bf-c539-4973-a618-46c92dffecd2"/> | <img src="Settings/Assets/Characters.png"/> | <img src="Settings/Assets/Search.png"/> | <img src="Settings/Assets/Details.png"/>
 
 ## Architecture Design
 
