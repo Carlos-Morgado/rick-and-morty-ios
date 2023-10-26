@@ -6,10 +6,10 @@
 
 <p align="center">
 <br>
-Rick&Morty is a UIKit app that uses the Rick&Morty API to display a different contents and their details. You can browse through hundreds of heroes and villains from the Rick&Morty universe, see all the episodes, and learn more about locations and planets.
+Rick&Morty is an American television series that narrates the adventures of Rick, a peculiar and crazy genius; and Morty, his shy and not very smart grandson. This application tries to show all the different contents of this TV show. You can search through hundreds of characters, episodes, and discover all the planets that create this universe.
  <br>
  <br>
-This app is created as a personal project to showcase my skills and passion for iOS development. This app demonstrates how to implement Clean Architecture and some of best practices for iOS app development using UIkit, CoreData, Combine, VIPER, Dependency Injection, and more.
+This application was created with the aim of learning new skills of the iOS development environment, such as the VIPER architecture, UIKit framework, Cocoapods, Kingfisher... and more.
 <br>
 </p>
 
@@ -55,30 +55,41 @@ This project uses Clean Architecture and is separated into four main layers:
 ## Folder Structure
 
 ```markdown
-📦SwiftyMarvel
-┣ 📂Core
-┃ ┣ 📂DI
-┃ ┗ 📂Extensions
-┣ 📂Data
-┃ ┣ 📂Constants
-┃ ┣ 📂DataSource
-┃ ┣ 📂Model
-┃ ┣ 📂Mappers
-┃ ┣ 📂Networking
-┃ ┗ 📂Repository
-┣ 📂Domain
-┃ ┣ 📂Entity
-┃ ┣ 📂Errors
-┃ ┣ 📂Repository
-┃ ┗ 📂UseCase
-┣ 📂Presentation
-┃ ┣ 📂Core
-┃ ┣ 📂ReusableViews
-┃ ┣ 📂Screens
-┃ ┃ ┣ 📂Home
-┃ ┃ ┃ ┣ 📂ViewModels
-┃ ┃ ┃ ┗ 📂Views
-┗ 📜SwiftyMarvelApp.swift => The app entry point.
+📦rick-and-morty
+┣ 📂Resource
+┗ 📂Source
+  ┣ 📂AppDelegate
+  ┣ 📂Common
+  ┣ 📂Module
+  ┃ ┣ 📂Splash
+  ┃ ┣ 📂TabBar
+  ┃ ┣ 📂Characters
+  ┃ ┣ 📂CharacterDetail
+  ┃ ┣ 📂Episodes
+  ┃ ┣ 📂EpisodeDetail
+  ┃ ┣ 📂Locations
+  ┃ ┗ 📂LocationsDetail
+  ┣ 📂Domain
+  ┃ ┣ 📂GetCharacters
+  ┃ ┃ ┣ 📂Interactor
+  ┃ ┣ 📂GetCharacterDetail
+  ┃ ┃ ┣ 📂Interactor
+  ┃ ┣ 📂GetEpisodes
+  ┃ ┃ ┣ 📂Interactor
+  ┃ ┣ 📂GetEpisodeDetail
+  ┃ ┃ ┣ 📂Interactor
+  ┃ ┗ 📂GetLocations
+  ┃   ┗ 📂Interactor
+  ┗ 📂Data
+    ┣ 📂Characters
+    ┃ ┣ 📂DataSource
+    ┃ ┗ 📂DTO
+    ┣ 📂Episodes
+    ┃ ┣ 📂DataSource
+    ┃ ┗ 📂DTO
+    ┗ 📂Locations
+      ┣ 📂DataSource
+      ┗ 📂DTO
 ```
 
 ## Tools & Frameworks Used
