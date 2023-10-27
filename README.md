@@ -33,17 +33,13 @@ This application was created with the aim of learning new skills of the iOS deve
 
 This project uses Clean Architecture and is separated into four main layers:
 
-* **Data**: Contains the repositories implementations responsible for abstracting
-  the data source used. In this case, the data sources are a REST API and a Core Data database.
-* **Domain**: Holds the business logic layer, which contains the use cases responsible for handling
-  the business logic of the application and the abstract repositories. The use cases are the entry
-  point to the domain layer.
-* **Presentation**: Contains the UI responsible for presenting the data to the user and handling
-  user interactions. It also contains the ViewModels, which are
-  responsible for preparing the data to be presented and for handling the interactions between the
-  view and the use cases.
-* **Core**: Contains the common code between the other layers, like the extensions and the dependency
-  injection code.
+* **Data**: En esta carpeta se encuentran los modelos de datos **(DTO)**, quienes son object model representation of the JSON request, y el **Data Source**, quien se encarga de la solicitud de los datos, ya sea para obtener los personajes, episodios, o localizaciones.
+* **Domain**: La información conseguida por el DataSource viaja al Interactor, cuya misión es pasar dicha información al presenter.
+* **Module**: Dentro de esta capa nos encontramos 3 piezas fundamentales en el desarrollo de la arquitectura:
+> El **Presenter** es el componente más importante de VIPER junto con el interactor ya que actúa como puente entre los módulos de VIPER y contiene la lógica de negocio. Recibe los eventos de la vista y reacciona a ellos pidiendo los datos necesarios al interactor. En sentido opuesto recibe los datos del interactor, aplica la lógica y prepara el contenido para pasárselo a la vista y que esta lo muestre.
+> El **Router**Es el encargado de la navegación y de pasar datos entre vistas. Debe implementar un protocolo que incluya todas las posibilidades de navegación entre módulos.
+> La **View** es básicamente un ViewController que contiene sub vistas implementadas programaticamente. La vista tiene como única responsabilidad mostrar en la interfaz la información que llega desde el presenter y recoger eventos del usuario delegándolos al presentador.
+* **Common**: Contains the common code between the other layers, like the extensions and the dependency injection code, reusable cells for all the aplication, the API base url...
 
 ## Architecture Scheme
   
