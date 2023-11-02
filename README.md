@@ -33,13 +33,13 @@ This application was created with the aim of learning new skills of the iOS deve
 
 This project uses Clean Architecture and is separated into four main layers:
 
-* **Data**: In this folder are the **(DTO)** data models, which are the object representation of the JSON request, and the **Data Source**, which is in charge of the data request to obtain the characters, episodes, or locations.
-* **Domain**: La información conseguida por el DataSource va al Interactor, cuya misión es pasar dicha información al presenter.
-* **Module**: Dentro de esta capa nos encontramos 3 piezas fundamentales en el desarrollo de la arquitectura:
-  * El **Presenter** es el componente más importante de VIPER junto con el interactor ya que actúa como puente entre los módulos de VIPER y contiene la lógica de negocio. Recibe los eventos de la vista y reacciona a ellos pidiendo los datos necesarios al interactor. En sentido opuesto recibe los datos del interactor, aplica la lógica y prepara el contenido para pasárselo a la vista y que esta lo muestre.
-  * El **Router** es el encargado de la navegación y de pasar datos entre vistas. Debe implementar un protocolo que incluya todas las posibilidades de navegación entre módulos.
-  * La **View** es básicamente un ViewController que contiene sub vistas implementadas programaticamente. La vista tiene como única responsabilidad mostrar en la interfaz la información que llega desde el presenter y recoger eventos del usuario delegándolos al presentador.
-* **Common**: Contains the common code between the other layers, like the extensions and the dependency injection code, reusable cells for all the aplication, the API base url...
+* **Data**: In this folder are the **(DTO)** data models, which are the object representation of the JSON request, and the **Data Source**, which is in charge of the data request to obtain the characters, episodes, or locations. 
+* **Domain**: The information obtained by the DataSource goes to the Interactor, whose mission is to pass this information to the presenter.
+* **Module**: Inside this layer we find 3 fundamental pieces in the development of the architecture:
+  * The **Presenter** is the most important component of VIPER next to the interactor as it acts as a bridge between the VIPER modules and contains the presentation logic. It receives events from the view and reacts to them by requesting the necessary data from the interactor. In the opposite direction it receives the data from the interactor, applies the logic and prepares the content to be passed to the view for display.
+  * The **Router** links and creates the different modules of the application, and also has the task of navigating between views. It must implement a protocol that includes all the navigation possibilities between modules.
+  * The **View** is a ViewController that contains programmatically implemented sub-views. The view has the responsibility of displaying in the interface the information coming from the presenter and collecting events from the user by delegating them to the presenter.
+* **Common**: Contains the common code between the other layers, like extensions, reusable cells for all the aplication, the API base url, and one of the most important files: the Network Manager.
 
 ## Architecture Scheme
   
@@ -93,13 +93,9 @@ This project uses Clean Architecture and is separated into four main layers:
 | Tool                                                                                                  | Used for                                                             |
 |-------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
 | VIPER                                                                                                 | Architectural design pattern for separating the logic form the views |
-| [Core Data](https://developer.apple.com/documentation/coredata/)                                      | Storing favorite characters                                          |
-| [Swinject](https://github.com/Swinject/Swinject)                                                      | Dependency Injection                                                 |
-| [Arkana](https://github.com/rogerluan/arkana)                                                         | Securely storing secrets and keys                                    |
-| [Nuke](https://github.com/kean/Nuke)                                                                  | Image Loading & Caching                                              |
-| [SwiftLint](https://github.com/realm/SwiftLint)                                                       | Code Linting                                                         |
-| [Mockingbird](https://github.com/birdrides/mockingbird)                                               | Generating mock, stub, and verify objects in Swift unit tests        |
-
+| UIKit                                                                                                 | Framework used to build apps                                         |
+| Kingfisher                                                                                            | Library for downloading and caching images from the web.             |
+| Cocoapods                                                                                             | Dependency manager                                                   |
 
 ## Development Environment
 * Xcode 14.0
@@ -108,23 +104,3 @@ This project uses Clean Architecture and is separated into four main layers:
 
 ## Author
 * [**Carlos Morgado**](https://github.com/Carlos-Morgado)
-
-  
-## Characteristics Overview
-- Written in Swift
-- Using UIKit framework
-- Auto layout Based
-- Designed with VIPER pattern
-- App runed on iPhone.
-- Built in Xcode 15
-- Leverages free Rick & Morty API
-- Kingfisher with CocoaPods
-  
-## App's design and structure
-The app has six key area:
-- Characters, which shows a list of all the characters.
-- Character Detail, where we can see all the information about the character.
-- Locations, which shows a list of all the locations.
-- Location Detail, where we can see all the information about the location.
-- Episodes, which shows a list of all the episodes.
-- Episode Detail, where we can see all the information about the episode.
