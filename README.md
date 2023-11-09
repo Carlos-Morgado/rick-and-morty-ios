@@ -1,4 +1,4 @@
-![Portadas-Github](https://github.com/Carlos-Morgado/rick-and-morty-ios/assets/122310905/62d4cb8b-ed60-4fcd-91e3-4ded71c41ac6)
+![Portadas-Github](https://github.com/Carlos-Morgado/rick-and-morty-ios/assets/122310905/b9256099-6295-49b9-af41-ebe5343c01d9)
 
 <h1 align="center"> Rick&Morty (UIKit Version) </h1>
 
