@@ -48,8 +48,6 @@
 		C4C0E3C02A73C0F10044BDE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C0E3BF2A73C0F10044BDE1 /* AppDelegate.swift */; };
 		C4C0E3C92A73C0F10044BDE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4C0E3C82A73C0F10044BDE1 /* Assets.xcassets */; };
 		C4C0E3CC2A73C0F10044BDE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C0E3CA2A73C0F10044BDE1 /* LaunchScreen.storyboard */; };
-		C4C0E3DB2A73CE480044BDE1 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C0E3D92A73CE480044BDE1 /* SplashViewController.swift */; };
-		C4C0E3DC2A73CE480044BDE1 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4C0E3DA2A73CE480044BDE1 /* SplashViewController.xib */; };
 		C4C1D53B2ABC32AA001ABD81 /* LocationsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C1D53A2ABC32AA001ABD81 /* LocationsRouter.swift */; };
 		C4C1D53D2ABC32BE001ABD81 /* LocationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C1D53C2ABC32BE001ABD81 /* LocationsPresenter.swift */; };
 		C4C1D53F2ABC32DB001ABD81 /* GetLocationsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C1D53E2ABC32DB001ABD81 /* GetLocationsInteractor.swift */; };
@@ -119,8 +117,6 @@
 		C4C0E3C82A73C0F10044BDE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4C0E3CB2A73C0F10044BDE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4C0E3CD2A73C0F10044BDE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C4C0E3D92A73CE480044BDE1 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
-		C4C0E3DA2A73CE480044BDE1 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		C4C1D53A2ABC32AA001ABD81 /* LocationsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsRouter.swift; sourceTree = "<group>"; };
 		C4C1D53C2ABC32BE001ABD81 /* LocationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsPresenter.swift; sourceTree = "<group>"; };
 		C4C1D53E2ABC32DB001ABD81 /* GetLocationsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocationsInteractor.swift; sourceTree = "<group>"; };
@@ -167,12 +163,12 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		C407BBDB2ADECBB7001FBCD8 /* Reusable Cells */ = {
+		C407BBDB2ADECBB7001FBCD8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C407BBDC2ADECC41001FBCD8 /* CharactersSectionCollectionViewCell.swift */,
+				C4CE9CFC2AFCF4CC00F92A66 /* Cells */,
 			);
-			path = "Reusable Cells";
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C408E0872A8A1E8C00CEB1B3 /* Characters */ = {
@@ -493,7 +489,7 @@
 			isa = PBXGroup;
 			children = (
 				C4C0E3D52A73CC270044BDE1 /* AppDelegate */,
-				C4C0E3D62A73CC500044BDE1 /* Common */,
+				C4C0E3D62A73CC500044BDE1 /* Core */,
 				C4C0E3D72A73CCB90044BDE1 /* Module */,
 				C442A0C72A8F6B4B001FBF70 /* Domain */,
 				C442A0CB2A8F7707001FBF70 /* Data */,
@@ -520,39 +516,29 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
-		C4C0E3D62A73CC500044BDE1 /* Common */ = {
+		C4C0E3D62A73CC500044BDE1 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				C407BBDB2ADECBB7001FBCD8 /* Reusable Cells */,
+				C407BBDB2ADECBB7001FBCD8 /* Views */,
 				C4D135672A9612C10044E5EB /* Util */,
 				C4CEA3A12A8B8433009B4EAE /* Extensions */,
 				C408E0882A8A2A4400CEB1B3 /* Manager */,
 			);
-			path = Common;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		C4C0E3D72A73CCB90044BDE1 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				C4C0E3D82A73CE0F0044BDE1 /* Splash */,
 				C408E09A2A8A607500CEB1B3 /* TabBar */,
 				C408E0872A8A1E8C00CEB1B3 /* Characters */,
-				C4C66BE42AA86CDF00407E0D /* Character Detail */,
+				C4C66BE42AA86CDF00407E0D /* CharacterDetail */,
 				C408E0942A8A600E00CEB1B3 /* Episodes */,
 				C45EA1502AB4A36D006228D4 /* EpisodeDetail */,
 				C408E0972A8A604D00CEB1B3 /* Locations */,
-				C4C1D5482ABC86A6001ABD81 /* Location Detail */,
+				C4C1D5482ABC86A6001ABD81 /* LocationDetail */,
 			);
 			path = Module;
-			sourceTree = "<group>";
-		};
-		C4C0E3D82A73CE0F0044BDE1 /* Splash */ = {
-			isa = PBXGroup;
-			children = (
-				C4C0E3D92A73CE480044BDE1 /* SplashViewController.swift */,
-				C4C0E3DA2A73CE480044BDE1 /* SplashViewController.xib */,
-			);
-			path = Splash;
 			sourceTree = "<group>";
 		};
 		C4C1D5332ABC321E001ABD81 /* Locations */ = {
@@ -613,14 +599,14 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		C4C1D5482ABC86A6001ABD81 /* Location Detail */ = {
+		C4C1D5482ABC86A6001ABD81 /* LocationDetail */ = {
 			isa = PBXGroup;
 			children = (
 				C4C1D5492ABC8752001ABD81 /* Router */,
 				C4C1D54A2ABC8759001ABD81 /* View */,
 				C4C1D54B2ABC876A001ABD81 /* Presenter */,
 			);
-			path = "Location Detail";
+			path = LocationDetail;
 			sourceTree = "<group>";
 		};
 		C4C1D5492ABC8752001ABD81 /* Router */ = {
@@ -649,14 +635,14 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		C4C66BE42AA86CDF00407E0D /* Character Detail */ = {
+		C4C66BE42AA86CDF00407E0D /* CharacterDetail */ = {
 			isa = PBXGroup;
 			children = (
 				C4C66BE52AA86D1C00407E0D /* Router */,
 				C4C66BE62AA86D2400407E0D /* View */,
 				C4C66BE72AA86D3500407E0D /* Presenter */,
 			);
-			path = "Character Detail";
+			path = CharacterDetail;
 			sourceTree = "<group>";
 		};
 		C4C66BE52AA86D1C00407E0D /* Router */ = {
@@ -685,6 +671,14 @@
 				C47764AF2AB21F8100196763 /* CharacterTypeInfo.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		C4CE9CFC2AFCF4CC00F92A66 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C407BBDC2ADECC41001FBCD8 /* CharactersSectionCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		C4CEA3A12A8B8433009B4EAE /* Extensions */ = {
@@ -784,7 +778,6 @@
 			files = (
 				C4C0E3CC2A73C0F10044BDE1 /* LaunchScreen.storyboard in Resources */,
 				C43517F92A8E4B8F00095D38 /* Localizable.strings in Resources */,
-				C4C0E3DC2A73CE480044BDE1 /* SplashViewController.xib in Resources */,
 				C4C0E3C92A73C0F10044BDE1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -876,7 +869,6 @@
 				C442A0C42A8F63A3001FBF70 /* String+Localized.swift in Sources */,
 				C45EA14F2AB46185006228D4 /* EpisodesDataSource.swift in Sources */,
 				C45EA1472AB45F76006228D4 /* EpisodesPresenter.swift in Sources */,
-				C4C0E3DB2A73CE480044BDE1 /* SplashViewController.swift in Sources */,
 				C4C1D54F2ABC88BD001ABD81 /* LocationDetailRouter.swift in Sources */,
 				C4D135692A9612D50044E5EB /* Constant.swift in Sources */,
 				C408E0912A8A5C9800CEB1B3 /* TabBarViewController.swift in Sources */,

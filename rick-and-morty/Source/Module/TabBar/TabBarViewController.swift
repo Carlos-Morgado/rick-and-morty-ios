@@ -15,10 +15,25 @@ final class TabBarViewController: UITabBarController {
     }
 
     private func setUpTabs() {
-        tabBar.isTranslucent = false
-        tabBar.barTintColor = .mainBackgroundColor1
-        tabBar.tintColor = UIColor.mainGreen1
-        tabBar.unselectedItemTintColor = UIColor.mainBlue1
+        let tabAppearance = UITabBarAppearance()
+        tabAppearance.configureWithOpaqueBackground()
+        tabAppearance.backgroundColor = UIColor.mainBackgroundColor1
+
+        tabAppearance.stackedLayoutAppearance.selected.iconColor = UIColor.mainGreen1
+        tabAppearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: UIColor.mainGreen1]
+
+        tabAppearance.stackedLayoutAppearance.normal.iconColor = UIColor.mainBlue1
+        tabAppearance.stackedLayoutAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.mainBlue1]
+
+        UITabBar.appearance().standardAppearance = tabAppearance
+
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .mainBackgroundColor1
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.mainGreen1]
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        
         let charactersViewControllerNavigation = UINavigationController(rootViewController: DefaultCharactersRouter.create())
         charactersViewControllerNavigation.tabBarItem = UITabBarItem(title: ("characters_screen_navigation_title".localized), image: UIImage(systemName: "person"), tag: 1)
         let episodesViewControllerNavigation = UINavigationController(rootViewController: DefaultEpisodesRouter.create())

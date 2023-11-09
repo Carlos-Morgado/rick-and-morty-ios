@@ -63,12 +63,7 @@ extension CharactersViewController: CharactersView {
 private extension CharactersViewController {
     func configView() {
         title = "characters_screen_navigation_title".localized
-        navigationController?.navigationBar.barStyle = .default
-        navigationController?.navigationBar.barTintColor = .mainBackgroundColor1
-        navigationController?.navigationBar.prefersLargeTitles = false
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
         view.backgroundColor = .mainBackgroundColor1
         view.addSubview(charactersSearchBar)
         NSLayoutConstraint.activate([

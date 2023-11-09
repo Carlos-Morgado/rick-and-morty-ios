@@ -64,12 +64,7 @@ private extension LocationsViewController {
     
     func configView() {
         title = "locations_screen_navigation_title".localized
-        navigationController?.navigationBar.barStyle = .default
-        navigationController?.navigationBar.barTintColor = .mainBackgroundColor1
-        navigationController?.navigationBar.prefersLargeTitles = false
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+       
         view.backgroundColor = .mainBackgroundColor1
         view.addSubview(locationsSearchBar)
         NSLayoutConstraint.activate([
