@@ -25,9 +25,11 @@ This application was created with the aim of learning new skills of the iOS deve
 
 ## How it looks
 
-| Characters List | Character Detail | Episodes List | Episode Detail | Locations List | Location Detail |
-| :-: | :-: | :-: | :-: | :-: | :-: |
-| <img width="200" src="https://github.com/Carlos-Morgado/rick-and-morty-ios/assets/122310905/bb009e65-2342-4da2-a64f-3cda095981c4"/> | <img width="200" src="https://github.com/Carlos-Morgado/rick-and-morty-ios/assets/122310905/3829268b-9878-4c89-a6c6-4e19984d39a4"/> | <img width="200" src="https://github.com/Carlos-Morgado/rick-and-morty-ios/assets/122310905/36faa661-92ab-41df-b1a3-f4315f1e4866"/> | <img width="200" src="https://github.com/Carlos-Morgado/rick-and-morty-ios/assets/122310905/fc95a7e6-f8d7-4f1a-a76d-108f8982f9e0"/> | <img width="200" src="https://github.com/Carlos-Morgado/rick-and-morty-ios/assets/122310905/dd8c524f-39f7-46a6-a590-ebbd4312bf08"/> | <img width="200" src="https://github.com/Carlos-Morgado/rick-and-morty-ios/assets/122310905/ee0e65a2-ac1f-4cf9-9686-a49ba6af397f"/>
+| Characters List | Character Detail | Episodes List |
+| :-: | :-: | :-: |
+| <img width="250" src="https://github.com/Carlos-Morgado/rick-and-morty-ios/assets/122310905/bb009e65-2342-4da2-a64f-3cda095981c4"/> | <img width="250" src="https://github.com/Carlos-Morgado/rick-and-morty-ios/assets/122310905/3829268b-9878-4c89-a6c6-4e19984d39a4"/> | <img width="250" src="https://github.com/Carlos-Morgado/rick-and-morty-ios/assets/122310905/36faa661-92ab-41df-b1a3-f4315f1e4866"/> 
+| Episode Detail | Locations List | Location Detail |
+| <img width="250" src="https://github.com/Carlos-Morgado/rick-and-morty-ios/assets/122310905/fc95a7e6-f8d7-4f1a-a76d-108f8982f9e0"/> | <img width="250" src="https://github.com/Carlos-Morgado/rick-and-morty-ios/assets/122310905/dd8c524f-39f7-46a6-a590-ebbd4312bf08"/> | <img width="250" src="https://github.com/Carlos-Morgado/rick-and-morty-ios/assets/122310905/ee0e65a2-ac1f-4cf9-9686-a49ba6af397f"/>
 
 ## Architecture Design
 
