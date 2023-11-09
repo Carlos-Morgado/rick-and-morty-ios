@@ -73,7 +73,6 @@ extension EpisodeDetailViewController: UICollectionViewDataSource {
         guard let presenter else {
             return UICollectionViewCell()
         }
-        let episode = presenter.episode
         let sectionType = SectionType.allCases[indexPath.section]
         switch sectionType {
         case .episodeInformationSection:

@@ -63,7 +63,7 @@ private extension CharacterEpisodeCollectionViewCell {
         contentView.backgroundColor = .mainBackgroundColor2
         contentView.layer.cornerRadius = 8
         contentView.layer.borderWidth = 1.5
-        contentView.layer.borderColor = UIColor.mainBlue1?.cgColor
+        contentView.layer.borderColor = UIColor.mainBlue1.cgColor
         
         contentView.addSubview(seasonLabel)
         NSLayoutConstraint.activate([

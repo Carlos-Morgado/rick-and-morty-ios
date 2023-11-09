@@ -73,7 +73,6 @@ extension LocationDetailViewController: UICollectionViewDataSource {
         guard let presenter else {
             return UICollectionViewCell()
         }
-        let location = presenter.location
         let sectionType = SectionType.allCases[indexPath.section]
         switch sectionType {
         case .locationInformationSection:
