@@ -46,8 +46,9 @@ This project uses Clean Architecture and is separated into four main layers:
 ## Architecture Scheme
   
 <p align="center">
-  <img width="1920" src="https://github.com/Carlos-Morgado/rick-and-morty-ios/assets/122310905/680db56a-3a6a-4726-811e-6dbf526ac7d1">
+  <img width="1920" src="https://github.com/Carlos-Morgado/rick-and-morty-ios/assets/122310905/03fff9e9-fbca-4994-a3ea-1fff34015529">
 </p>
+
 
 ## Folder Structure
 
