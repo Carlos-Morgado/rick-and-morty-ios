@@ -58,6 +58,7 @@ extension DefaultLocationDetailPresenter: LocationDetailPresenter {
 extension DefaultLocationDetailPresenter: GetCharacterDetailInteractorOutput {
     func manageGetCharacterDetailSuccess(characterDetail: CharacterDTO) {
         residents.append(characterDetail)
+        residents.sort {$0.id < $1.id}
         viewController?.reloadData()
     }
     

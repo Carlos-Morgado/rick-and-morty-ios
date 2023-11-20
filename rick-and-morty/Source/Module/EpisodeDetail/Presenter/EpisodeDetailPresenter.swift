@@ -56,6 +56,7 @@ extension DefaultEpisodeDetailPresenter: EpisodeDetailPresenter {
 extension DefaultEpisodeDetailPresenter: GetCharacterDetailInteractorOutput {
     func manageGetCharacterDetailSuccess(characterDetail: CharacterDTO) {
         characters.append(characterDetail)
+        characters.sort {$0.id < $1.id}
         viewController?.reloadData()
     }
     
